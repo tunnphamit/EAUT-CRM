@@ -8,10 +8,11 @@ class Student(models.Model):
 
     # tracking=True -> Khi trường thay đổi, Odoo sẽ ghi lại lịch sử thay đổi vào Chatter
     code = fields.Char(string="Student Code", required=True, tracking=True)
-    full_name = fields.Char(string='Full Name', required=True, tracking=True)
+    name = fields.Char(string='Full Name', required=True, tracking=True)
     email = fields.Char(string='Email', required=True, tracking=True)
     phone = fields.Char(string='Phone', required=True, tracking=True)
     date_of_birth = fields.Date(string='Date of Birth', tracking=True)
+    photo = fields.Binary(string='Photo', attachment=True) # Ảnh đại diện
     
     # Quan hệ Khoa, Khóa, Ngành
     faculty_ids = fields.Many2many(

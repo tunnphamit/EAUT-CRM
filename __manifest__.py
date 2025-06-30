@@ -14,10 +14,14 @@
     'website': 'https://yourcompany.com',
     'depends': ['base', 'crm', 'event'],
     'data': [
-        'security/security.xml',
-        'security/ir.model.access.csv',
+        # 'security/security.xml',
         'views/student_views.xml',
+        'views/eaut_crm_menus.xml',
+        
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'application': True,
+    'icon': '/eaut_crm/static/description/icon.png',
+    'license': 'LGPL-3',
 }

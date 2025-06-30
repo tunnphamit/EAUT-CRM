@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="student_view_form" model="ir.ui.view">
+        <field name="name">eaut.crm.student.view.form</field>
+        <field name="model">eaut.crm.student</field>
+        <field name="arch" type="xml">
+            <form string="Students">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <!-- Ảnh sinh viên -->
+                            <field name="photo" widget="image" class="oe_avatar" options="{'size': [128, 128]}"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="date_of_birth"/>
+                        </group>
+                    </group>
+                    <group string="Academic Info" colspan="2">
+                        <field name="faculty_ids" widget="many2many_tags"/>
+                        <field name="major_ids" widget="many2many_tags"/>
+                        <field name="program_ids" widget="many2many_tags"/>
+                    </group>
+                    <group string="Events">
+                        <field name="event_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="student_view_list" model="ir.ui.view">
+        <field name="name">eaut.crm.student.view.list</field>
+        <field name="model">eaut.crm.student</field>
+        <field name="arch" type="xml">
+            <list string="Students">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="date_of_birth"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="action_eaut_crm_student" model="ir.actions.act_window">
+        <field name="name">Student</field>
+        <field name="res_model">eaut.crm.student</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

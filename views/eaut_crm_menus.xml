@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_eaut_crm_root" name="EAUT CRM"/>
+
+        <menuitem id="menu_eaut_crm_student" 
+            name="Students" 
+            parent="menu_eaut_crm_root" 
+            action="action_eaut_crm_student"/>
+    </data>
+</odoo>
