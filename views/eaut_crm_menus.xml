@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <menuitem id="menu_eaut_crm_root" name="EAUT CRM"/>
+        <menuitem 
+            id="menu_eaut_crm_root" 
+            name="EAUT CRM"
+            web_icon="eaut_crm,static/description/icon.png"/>
 
         <menuitem id="menu_eaut_crm_student" 
             name="Students" 

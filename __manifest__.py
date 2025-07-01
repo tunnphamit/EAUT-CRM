@@ -12,7 +12,13 @@
     'category': 'CRM',
     'author': 'Your Name',
     'website': 'https://yourcompany.com',
-    'depends': ['base', 'crm', 'event'],
+    'depends': [
+        'base',
+        'crm',
+        'event',
+        'mail',
+        'calendar'
+    ],
     'data': [
         # 'security/security.xml',
         'views/student_views.xml',

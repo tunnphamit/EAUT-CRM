@@ -1,5 +1,7 @@
 
-from odoo import fields, models
+from odoo import fields, models, api, _
+import re
+from odoo.exceptions import ValidationError
 
 class Student(models.Model):
     _name = 'eaut.crm.student'
@@ -11,8 +13,11 @@ class Student(models.Model):
     name = fields.Char(string='Full Name', required=True, tracking=True)
     email = fields.Char(string='Email', required=True, tracking=True)
     phone = fields.Char(string='Phone', required=True, tracking=True)
-    date_of_birth = fields.Date(string='Date of Birth', tracking=True)
+    date_of_birth = fields.Date(string='Date of Birth')
     photo = fields.Binary(string='Photo', attachment=True) # Ảnh đại diện
+
+    parent_name = fields.Char(string='Parent name')
+    parent_phone = fields.Char(string='Parent phone')
     
     # Quan hệ Khoa, Khóa, Ngành
     faculty_ids = fields.Many2many(
@@ -47,3 +52,13 @@ class Student(models.Model):
         ('student_code_unique', 'unique(code)', 'Student Code must be unique!'),
         ('email_unique', 'unique(email)', 'Email must be unique!'),
     ]
+
+    # Validation
+
+    # Email validation
+    @api.constrains('email')
+    def _check_email_format(self):
+        email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+        for rec in self:
+            if rec.email and not re.match(email_pattern, rec.email):
+                raise ValidationError(_("Email '%s' is not a valid email address!") % rec.email)
