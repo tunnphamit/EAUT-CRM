@@ -12,7 +12,7 @@ class Program(models.Model):
     name = fields.Char(string='Program name', required=True, tracking=True)
     
     # Năm khởi tạo
-    start_year = fields.Integer(string='Start year', required=True, tracking=True)
+    start_year = fields.Char(string='Start year', required=True, tracking=True)
 
     # Quan hệ N:N: 1 chương trình nhiều sinh viên, 1 sinh viên nhiều chương trình
     student_ids = fields.Many2many(

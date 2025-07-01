@@ -6,9 +6,28 @@
             name="EAUT CRM"
             web_icon="eaut_crm,static/description/icon.png"/>
 
+        <menuitem id="menu_eaut_crm_student_management"
+            name="Student management" 
+            parent="menu_eaut_crm_root"/>
+
         <menuitem id="menu_eaut_crm_student" 
-            name="Students" 
-            parent="menu_eaut_crm_root" 
+            name="Student" 
+            parent="menu_eaut_crm_student_management" 
             action="action_eaut_crm_student"/>
+
+        <menuitem id="menu_eaut_crm_faculty" 
+            name="Faculty" 
+            parent="menu_eaut_crm_student_management" 
+            action="action_eaut_crm_faculty"/>
+
+        <menuitem id="menu_eaut_crm_major" 
+            name="Major" 
+            parent="menu_eaut_crm_student_management" 
+            action="action_eaut_crm_major"/>
+            
+        <menuitem id="menu_eaut_crm_program" 
+            name="Program" 
+            parent="menu_eaut_crm_student_management" 
+            action="action_eaut_crm_program"/>
     </data>
 </odoo>

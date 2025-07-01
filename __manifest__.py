@@ -22,6 +22,10 @@
     'data': [
         # 'security/security.xml',
         'views/student_views.xml',
+        'views/faculty_views.xml',
+        'views/program_views.xml',
+        'views/major_views.xml',
+
         'views/eaut_crm_menus.xml',
         
         'security/ir.model.access.csv',
