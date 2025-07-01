@@ -15,10 +15,9 @@ class Student(models.Model):
     phone = fields.Char(string='Phone', required=True, tracking=True)
     date_of_birth = fields.Date(string='Date of Birth')
     photo = fields.Binary(string='Photo', attachment=True) # Ảnh đại diện
+    note = fields.Html(string="Note")
+    address = fields.Text(string='Address')
 
-    parent_name = fields.Char(string='Parent name')
-    parent_phone = fields.Char(string='Parent phone')
-    
     # Quan hệ Khoa, Khóa, Ngành
     faculty_ids = fields.Many2many(
         'eaut.crm.faculty',

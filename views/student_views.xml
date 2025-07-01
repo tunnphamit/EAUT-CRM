@@ -24,20 +24,16 @@
 
                     <group>
                         <group string="Thông tin cá nhân">
-                            <field name="code"/>
-                            <field name="email"/>
-                            <field name="phone"/>
-                            <field name="date_of_birth"/>
+                            <field name="code" string="Mã sinh viên"/>
+                            <field name="email" string="Địa chỉ email"/>
+                            <field name="phone" string="Số điện thoại"/>
+                            <field name="date_of_birth" string="Ngày sinh"/>
                         </group>
                         <group string="Thông tin đào tạo">
-                            <field name="faculty_ids" widget="many2many_tags"/>
-                            <field name="major_ids" widget="many2many_tags"/>
-                            <field name="program_ids" widget="many2many_tags"/>
+                            <field name="faculty_ids" widget="many2many_tags" string="Khoa"/>
+                            <field name="major_ids" widget="many2many_tags" string="Ngành"/>
+                            <field name="program_ids" widget="many2many_tags" string="Khóa"/>
                         </group>
-                    </group>
-
-                    <group string="Events">
-                        <field name="event_ids" widget="many2many_tags"/>
                     </group>
 
                     <!-- Notebook -->
@@ -45,11 +41,29 @@
                         <page string="Thông tin bổ sung">
                             <group>
                                 <group>
-                                    <field name="parent_name"/>
+                                    <field name="address" string="Địa chỉ"/>
                                 </group>
                                 <group>
-                                    <field name="parent_phone"/> 
                                 </group> 
+                            </group>
+                        </page>
+                        <page string="Các hoạt động">
+                            <group>
+                                <group>
+                                    <field name="event_ids" widget="many2many_tags"/>
+                                </group>
+
+                            </group>
+                        </page>
+                        <page string="Ghi chú">
+                            <group>
+                                <field 
+                                    name="note"
+                                    string="Ghi chú"
+                                    nolabel="1"
+                                    class="note-editable odoo-editor-editable"
+                                    style="min-height:200px;"
+                                />
                             </group>
                         </page>
                     </notebook>
