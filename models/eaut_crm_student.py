@@ -3,7 +3,7 @@ from odoo import fields, models, api, _
 import re
 from odoo.exceptions import ValidationError
 
-class Student(models.Model):
+class EautCrmStudent(models.Model):
     _name = 'eaut.crm.student'
     _description = 'Student'
     _inherit = ['mail.thread', 'mail.activity.mixin']

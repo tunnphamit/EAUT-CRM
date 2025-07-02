@@ -1,6 +1,6 @@
 from odoo import fields, models
 
-class Faculty(models.Model):
+class EautCrmFaculty(models.Model):
     _name = 'eaut.crm.faculty'
     _description = 'Faculty' # Khoa
     _inherit = ['mail.thread', 'mail.activity.mixin']
