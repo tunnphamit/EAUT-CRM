@@ -22,10 +22,10 @@
     ],
     'data': [
         # 'security/security.xml',
-        'views/student_views.xml',
-        'views/faculty_views.xml',
-        'views/program_views.xml',
-        'views/major_views.xml',
+        'views/eaut_crm_student_views.xml',
+        'views/eaut_crm_faculty_views.xml',
+        'views/eaut_crm_program_views.xml',
+        'views/eaut_crm_major_views.xml',
 
         'views/eaut_crm_menus.xml',
         
