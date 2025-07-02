@@ -6,9 +6,38 @@
             name="EAUT CRM"
             web_icon="eaut_crm,static/description/icon.png"/>
 
+        <!-- Student -->
+        <menuitem id="menu_eaut_crm_student_management"
+            name="Sinh viên" 
+            parent="menu_eaut_crm_root"/>
+
         <menuitem id="menu_eaut_crm_student" 
-            name="Students" 
-            parent="menu_eaut_crm_root" 
+            name="Sinh viên" 
+            parent="menu_eaut_crm_student_management" 
             action="action_eaut_crm_student"/>
+
+        <menuitem id="menu_eaut_crm_faculty" 
+            name="Khoa" 
+            parent="menu_eaut_crm_student_management" 
+            action="action_eaut_crm_faculty"/>
+
+        <menuitem id="menu_eaut_crm_major" 
+            name="Ngành" 
+            parent="menu_eaut_crm_student_management" 
+            action="action_eaut_crm_major"/>
+            
+        <menuitem id="menu_eaut_crm_program" 
+            name="Khóa" 
+            parent="menu_eaut_crm_student_management" 
+            action="action_eaut_crm_program"/>
+
+        <!-- Configuration -->
+        <menuitem id="menu_eaut_crm_configuration"
+            name="Cấu hình" 
+            parent="menu_eaut_crm_root"/>
+        <menuitem id="menu_eaut_crm_support_team_management"
+            name="Nhóm hỗ trợ" 
+            parent="menu_eaut_crm_configuration" 
+            action="action_eaut_crm_support_team"/>
     </data>
 </odoo>

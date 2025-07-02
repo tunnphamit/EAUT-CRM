@@ -3,3 +3,4 @@ access_eaut_crm_student_all,EAUT CRM Student,model_eaut_crm_student,,1,1,1,1
 access_eaut_crm_faculty_all,EAUT CRM Faculty,model_eaut_crm_faculty,,1,1,1,1
 access_eaut_crm_major_all,EAUT CRM Major,model_eaut_crm_major,,1,1,1,1
 access_eaut_crm_program_all,EAUT CRM Program,model_eaut_crm_program,,1,1,1,1
+access_eaut_crm_support_team_all,EAUT CRM Support Team,model_eaut_crm_support_team,,1,1,1,1

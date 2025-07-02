@@ -3,7 +3,7 @@ from odoo import fields, models, api, _
 import re
 from odoo.exceptions import ValidationError
 
-class Student(models.Model):
+class EautCrmStudent(models.Model):
     _name = 'eaut.crm.student'
     _description = 'Student'
     _inherit = ['mail.thread', 'mail.activity.mixin']
@@ -15,10 +15,11 @@ class Student(models.Model):
     phone = fields.Char(string='Phone', required=True, tracking=True)
     date_of_birth = fields.Date(string='Date of Birth')
     photo = fields.Binary(string='Photo', attachment=True) # Ảnh đại diện
+    note = fields.Html(string="Note")
+    address = fields.Text(string='Address')
 
-    parent_name = fields.Char(string='Parent name')
-    parent_phone = fields.Char(string='Parent phone')
-    
+    # tag_ids = fields.Many2many('eaut.crm.student.tag', string='Tags')
+
     # Quan hệ Khoa, Khóa, Ngành
     faculty_ids = fields.Many2many(
         'eaut.crm.faculty',
@@ -45,7 +46,11 @@ class Student(models.Model):
         tracking=True
     )
 
+    # Tham chiếu đến Event
     event_ids = fields.Many2many('event.event', string='Participated Events')
+
+    # Khóa học đã học
+    slide_channel_ids = fields.Many2many('slide.channel', string="Participated Courses")
 
     # Ràng buộc Unique cho mã Sinh viên và Email
     _sql_constraints = [
