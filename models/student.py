@@ -44,7 +44,11 @@ class Student(models.Model):
         tracking=True
     )
 
+    # Tham chiếu đến Event
     event_ids = fields.Many2many('event.event', string='Participated Events')
+
+    # Khóa học đã học
+    slide_channel_ids = fields.Many2many('slide.channel', string="Participated Courses")
 
     # Ràng buộc Unique cho mã Sinh viên và Email
     _sql_constraints = [

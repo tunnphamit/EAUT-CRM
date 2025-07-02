@@ -17,7 +17,8 @@
         'crm',
         'event',
         'mail',
-        'calendar'
+        'calendar',
+        'website_slides'
     ],
     'data': [
         # 'security/security.xml',
@@ -30,6 +31,11 @@
         
         'security/ir.model.access.csv',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'eaut_crm/static/src/css/student_view.css'
+        ],
+    },
     'installable': True,
     'application': True,
     'icon': '/eaut_crm/static/description/icon.png',

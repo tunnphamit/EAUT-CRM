@@ -1,0 +1,17 @@
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.model-title input{
+    flex: 60%;
+}
+
+.o_kanban_card .student_kanban_photo img {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 128px;
+    height: 128px;
+}

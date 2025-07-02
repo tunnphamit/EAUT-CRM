@@ -8,33 +8,32 @@
         <field name="arch" type="xml">
             <form string="Students">
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
+                    <div class="flex-container">
+                        <h1 class="oe_title">
                             <field name="name" placeholder="Họ và tên"/>
-                            <group>
-                                <!-- Ảnh sinh viên -->
-                                <field name="photo" 
-                                    widget="image" 
-                                    class="oe_avatar"
-                                    nolabel="1"
-                                    options="{'size': [128, 128]}"/>
-                            </group>
                         </h1>
+                        <field name="photo"
+                            widget="image"
+                            class="oe_avatar"
+                            nolabel="1"
+                            options="{'size': [128, 128]}" />
                     </div>
 
-                    <group>
-                        <group string="Thông tin cá nhân">
-                            <field name="code" string="Mã sinh viên"/>
-                            <field name="email" string="Địa chỉ email"/>
-                            <field name="phone" string="Số điện thoại"/>
-                            <field name="date_of_birth" string="Ngày sinh"/>
+                    <div>
+                        <group>
+                            <group string="Thông tin cá nhân">
+                                <field name="code" string="Mã sinh viên"/>
+                                <field name="email" string="Địa chỉ email"/>
+                                <field name="phone" string="Số điện thoại"/>
+                                <field name="date_of_birth" string="Ngày sinh"/>
+                            </group>
+                            <group string="Thông tin đào tạo">
+                                <field name="faculty_ids" widget="many2many_tags" string="Khoa"/>
+                                <field name="major_ids" widget="many2many_tags" string="Ngành"/>
+                                <field name="program_ids" widget="many2many_tags" string="Khóa"/>
+                            </group>
                         </group>
-                        <group string="Thông tin đào tạo">
-                            <field name="faculty_ids" widget="many2many_tags" string="Khoa"/>
-                            <field name="major_ids" widget="many2many_tags" string="Ngành"/>
-                            <field name="program_ids" widget="many2many_tags" string="Khóa"/>
-                        </group>
-                    </group>
+                    </div>
 
                     <!-- Notebook -->
                     <notebook>
@@ -96,6 +95,7 @@
         </field>
     </record>
 
+    <!-- Kanban view -->
     <record id="eaut_crm_student_view_kanban" model="ir.ui.view">
         <field name="name">eaut.crm.student.view.kanban</field>
         <field name="model">eaut.crm.student</field>
@@ -108,10 +108,9 @@
                                 <!-- Ảnh bên trái -->
                                 <div style="flex-shrink: 0; margin-right: 10px;">
                                     <field name="photo" 
-                                    widget="image" 
-                                    class="oe_avatar" 
-                                    style="border-radius: 8px !important; object-fit: cover;"
-                                    options="{'size': [128, 128]}" />
+                                        widget="image" 
+                                        class="oe_avatar student_kanban_photo" 
+                                        options="{'size': [128, 128]}" />
                                 </div>
                                 <!-- Nội dung bên phải -->
                                 <div>
