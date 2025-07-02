@@ -18,6 +18,8 @@ class EautCrmStudent(models.Model):
     note = fields.Html(string="Note")
     address = fields.Text(string='Address')
 
+    # tag_ids = fields.Many2many('eaut.crm.student.tag', string='Tags')
+
     # Quan hệ Khoa, Khóa, Ngành
     faculty_ids = fields.Many2many(
         'eaut.crm.faculty',

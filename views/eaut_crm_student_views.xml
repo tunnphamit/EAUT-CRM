@@ -31,6 +31,7 @@
                                 <field name="faculty_ids" widget="many2many_tags" string="Khoa"/>
                                 <field name="major_ids" widget="many2many_tags" string="Ngành"/>
                                 <field name="program_ids" widget="many2many_tags" string="Khóa"/>
+                                <!-- <field name="tag_ids" widget="many2many_tags" string="Tags"/> -->
                             </group>
                         </group>
                     </div>
