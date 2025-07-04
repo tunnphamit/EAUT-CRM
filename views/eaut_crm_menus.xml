@@ -16,28 +16,33 @@
             parent="menu_eaut_crm_student_management" 
             action="action_eaut_crm_student"/>
 
-        <menuitem id="menu_eaut_crm_faculty" 
-            name="Khoa" 
-            parent="menu_eaut_crm_student_management" 
-            action="action_eaut_crm_faculty"/>
-
-        <menuitem id="menu_eaut_crm_major" 
-            name="Ngành" 
-            parent="menu_eaut_crm_student_management" 
-            action="action_eaut_crm_major"/>
-            
-        <menuitem id="menu_eaut_crm_program" 
-            name="Khóa" 
-            parent="menu_eaut_crm_student_management" 
-            action="action_eaut_crm_program"/>
-
         <!-- Configuration -->
         <menuitem id="menu_eaut_crm_configuration"
             name="Cấu hình" 
             parent="menu_eaut_crm_root"/>
+        <!-- Support team -->
         <menuitem id="menu_eaut_crm_support_team_management"
             name="Nhóm hỗ trợ" 
             parent="menu_eaut_crm_configuration" 
             action="action_eaut_crm_support_team"/>
+
+        <!--  -->
+        <menuitem id="menu_eaut_crm_education_title"
+            name="Đào tạo" 
+            parent="menu_eaut_crm_configuration"/>
+        <menuitem id="menu_eaut_crm_faculty" 
+            name="Khoa" 
+            parent="menu_eaut_crm_education_title" 
+            action="action_eaut_crm_faculty"/>
+
+        <menuitem id="menu_eaut_crm_major" 
+            name="Ngành" 
+            parent="menu_eaut_crm_education_title" 
+            action="action_eaut_crm_major"/>
+            
+        <menuitem id="menu_eaut_crm_program" 
+            name="Khóa" 
+            parent="menu_eaut_crm_education_title" 
+            action="action_eaut_crm_program"/>
     </data>
 </odoo>
