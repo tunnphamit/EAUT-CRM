@@ -27,6 +27,7 @@
         'views/eaut_crm_program_views.xml',
         'views/eaut_crm_major_views.xml',
         'views/eaut_crm_support_team_views.xml',
+        'views/eaut_crm_stage_views.xml',
 
         'views/eaut_crm_menus.xml',
         

@@ -58,6 +58,12 @@ class EautCrmStudent(models.Model):
         ('email_unique', 'unique(email)', 'Email must be unique!'),
     ]
 
+    # # Quan hệ với Support Team
+    support_team_id = fields.Many2one('eaut.crm.eaut_support_team', string='Support Team')
+
+    # Quan hệ với Stage
+    stage_id = fields.Many2one('eaut.crm.stage', string="Stage", tracking=True, index=True)
+
     # Validation
 
     # Email validation

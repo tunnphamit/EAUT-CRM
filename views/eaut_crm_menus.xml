@@ -8,13 +8,18 @@
 
         <!-- Student -->
         <menuitem id="menu_eaut_crm_student_management"
-            name="Sinh viên" 
+            name="Hướng nghiệp sinh viên" 
             parent="menu_eaut_crm_root"/>
 
         <menuitem id="menu_eaut_crm_student" 
             name="Sinh viên" 
             parent="menu_eaut_crm_student_management" 
             action="action_eaut_crm_student"/>
+
+        <!-- Company -->
+        <menuitem id="menu_eaut_crm_compay_management"
+            name="Hợp tác doanh nghiệp" 
+            parent="menu_eaut_crm_root"/>
 
         <!-- Configuration -->
         <menuitem id="menu_eaut_crm_configuration"
@@ -25,6 +30,11 @@
             name="Nhóm hỗ trợ" 
             parent="menu_eaut_crm_configuration" 
             action="action_eaut_crm_support_team"/>
+        <!-- Stage -->
+        <menuitem id="menu_eaut_crm_stage_management"
+            name="Giai đoạn" 
+            parent="menu_eaut_crm_configuration" 
+            action="action_eaut_crm_stage"/>
 
         <!--  -->
         <menuitem id="menu_eaut_crm_education_title"
