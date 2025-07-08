@@ -23,8 +23,8 @@
         <field name="model">eaut.crm.faculty</field>
         <field name="arch" type="xml">
             <list string="Facultys">
-                <field name="code"/>
                 <field name="name"/> 
+                <field name="code"/>
             </list>
         </field>
     </record>

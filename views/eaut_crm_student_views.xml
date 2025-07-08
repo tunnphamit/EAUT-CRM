@@ -28,7 +28,7 @@
                             <group string="Thông tin cá nhân">
                                 <field name="code" string="Mã sinh viên"/>
                                 <field name="email" string="Địa chỉ email"/>
-                                <field name="phone" string="Số điện thoại"/>
+                                <field name="phone" string="Số điện thoại" widget="phone"/>
                                 <field name="date_of_birth" string="Ngày sinh"/>
                                 <field name="tag_ids" 
                                     widget="many2many_tags" 
@@ -46,21 +46,24 @@
 
                     <!-- Notebook -->
                     <notebook>
+                        <page string="Hoạt động">
+                            <group>
+                                <group>
+                                    <field name="event_ids" string="Sự kiện đã tham gia" widget="many2many_tags"/>
+                                </group>
+                                <group>
+                                    <field name="slide_channel_ids" string="Khóa học đã tham gia" widget="many2many_tags"/>
+                                </group>
+                            </group>
+                        </page>
                         <page string="Thông tin bổ sung">
                             <group>
                                 <group>
                                     <field name="address" string="Địa chỉ"/>
+                                    <field name="support_team_id" string="Đội hỗ trợ"/>
                                 </group>
                                 <group>
                                 </group> 
-                            </group>
-                        </page>
-                        <page string="Các hoạt động">
-                            <group>
-                                <group>
-                                    <field name="event_ids" string="Các sự kiện đã tham gia" widget="many2many_tags"/>
-                                    <field name="slide_channel_ids" string="Các khóa học đã tham gia" widget="many2many_tags"/>
-                                </group>
                             </group>
                         </page>
                         <page string="Ghi chú">
@@ -130,6 +133,8 @@
                                     <strong><field name="name"/></strong>
                                     <div>
                                         <field name="email"/>
+                                        <field name="program_ids" string="Khóa"/>
+                                        <field name="major_ids" string="Ngành"/>
                                     </div>
                                 </div>
                             </div>
