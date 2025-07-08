@@ -62,7 +62,15 @@ class EautCrmStudent(models.Model):
     support_team_id = fields.Many2one('eaut.crm.eaut_support_team', string='Support Team')
 
     # Quan hệ với Stage
-    stage_id = fields.Many2one('eaut.crm.stage', string="Stage", tracking=True, index=True)
+    # stage_id = fields.Many2one('eaut.crm.stage', string="Stage", tracking=True, index=True)
+
+    stage_id = fields.Many2one(
+        'eaut.crm.stage',
+        string="Stage",
+        tracking=True,
+        index=True,
+        domain="[('model_type', '=', 'student')]"
+    )
 
     # Validation
 

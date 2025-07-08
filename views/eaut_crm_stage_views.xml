@@ -9,8 +9,9 @@
             <form string="Stage">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="description"/>
+                        <field name="name" string="Tên giai đoạn"/>
+                        <field name="model_type" string="Thuộc về"/>
+                        <field name="description" string="Mô tả"/>
                     </group>
                 </sheet>
             </form>
@@ -22,9 +23,11 @@
         <field name="name">eaut.crm.stage.view.list</field>
         <field name="model">eaut.crm.stage</field>
         <field name="arch" type="xml">
-            <list string="Stages">
-                <field name="name"/> 
-                <field name="description"/> 
+            <list string="Stages" default_group_by="model_type">
+                <field name="sequence" widget="handle"/>
+                <field name="name" string="Tên giai đoạn"/>
+                <field name="description" string="Mô tả"/>
+                <field name="model_type" string="Thuộc về"/>
             </list>
         </field>
     </record>
