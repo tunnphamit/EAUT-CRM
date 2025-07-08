@@ -141,6 +141,6 @@
         <field name="name">Student</field>
         <field name="res_model">eaut.crm.student</field>
         <field name="view_mode">kanban,list,form</field>
-        <field name="domain">[('stage_id.model_type', '=', 'student')]</field>
+        <!-- <field name="domain">[('stage_id.model_type', '=', 'student')]</field> -->
     </record>
 </odoo>
