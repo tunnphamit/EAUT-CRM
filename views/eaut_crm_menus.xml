@@ -35,6 +35,11 @@
             name="Giai đoạn" 
             parent="menu_eaut_crm_configuration" 
             action="action_eaut_crm_stage"/>
+        <!-- Tag -->
+        <menuitem id="menu_eaut_crm_tag_management"
+            name="Thẻ" 
+            parent="menu_eaut_crm_configuration" 
+            action="action_eaut_crm_tag"/>
 
         <!--  -->
         <menuitem id="menu_eaut_crm_education_title"

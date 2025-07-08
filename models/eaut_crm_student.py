@@ -72,6 +72,15 @@ class EautCrmStudent(models.Model):
     #     # domain="[('model_type', '=', 'student')]"
     # )
 
+    tag_ids = fields.Many2many(
+        'eaut.crm.tag',
+        'student_tag_rel',
+        'student_id',
+        'tag_id',
+        string='Tags',
+        tracking=True
+    )
+
     # Validation
 
     # Email validation

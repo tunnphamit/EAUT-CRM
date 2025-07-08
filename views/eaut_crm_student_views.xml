@@ -30,6 +30,10 @@
                                 <field name="email" string="Địa chỉ email"/>
                                 <field name="phone" string="Số điện thoại"/>
                                 <field name="date_of_birth" string="Ngày sinh"/>
+                                <field name="tag_ids" 
+                                    widget="many2many_tags" 
+                                    string="Thẻ"
+                                    options="{'color_field': 'color'}"/>
                             </group>
                             <group string="Thông tin đào tạo">
                                 <field name="faculty_ids" widget="many2many_tags" string="Khoa"/>
@@ -128,6 +132,12 @@
                                         <field name="email"/>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="o_kanban_footer">
+                                <field name="tag_ids" 
+                                    widget="many2many_tags" 
+                                    string="Thẻ" 
+                                    options="{'color_field': 'color'}"/>
                             </div>
                         </div>
                     </t>

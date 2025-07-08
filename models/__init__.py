@@ -5,3 +5,4 @@ from . import eaut_crm_major
 from . import eaut_crm_program
 from . import eaut_crm_support_team
 from . import eaut_crm_stage
+from . import eaut_crm_tag

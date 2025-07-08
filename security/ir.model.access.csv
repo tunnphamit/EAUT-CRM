@@ -5,3 +5,4 @@ access_eaut_crm_major_all,EAUT CRM Major,model_eaut_crm_major,,1,1,1,1
 access_eaut_crm_program_all,EAUT CRM Program,model_eaut_crm_program,,1,1,1,1
 access_eaut_crm_support_team_all,EAUT CRM Support Team,model_eaut_crm_support_team,,1,1,1,1
 access_eaut_crm_stage_all,EAUT CRM Stage,model_eaut_crm_stage,,1,1,1,1
+access_eaut_crm_tag_all,EAUT CRM Tag,model_eaut_crm_tag,,1,1,1,1
