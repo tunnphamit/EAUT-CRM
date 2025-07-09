@@ -6,13 +6,86 @@
         <field name="name">eaut.crm.employer.view.form</field>
         <field name="model">eaut.crm.employer</field>
         <field name="arch" type="xml">
-            <form string="Nhà tuyển dụng">
-                <sheet>
-                    <group>
-                        <field name="name"/>
+            <form string="Employers">
+                <header>
+                    <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
 
-                    </group>
+                <sheet>
+                    <div class="flex-container">
+                        <h1 class="oe_title">
+                            <field name="name" placeholder="Họ và tên"/>
+                        </h1>
+                        <field name="photo"
+                            widget="image"
+                            class="oe_avatar"
+                            nolabel="1"
+                            options="{'size': [128, 128]}" />
+                    </div>
+
+                    <div>
+                        <group>
+                            <group string="Thông tin chung">
+                                <field name="email" string="Địa chỉ email"/>
+                                <field name="phone" string="SĐT Công ty" widget="phone"/>
+                                <field name="industry" string="Lĩnh vực hoạt động"/>
+                                <field name="number_of_employees" string="Số lượng nhân viên)"/>
+                                <field name="tag_ids" 
+                                    widget="many2many_tags" 
+                                    string="Thẻ"
+                                    options="{'color_field': 'color'}"/>
+                            </group>
+                            <group>
+                                <field name="website" string="Website"/>
+                                <field name="address" string="Địa chỉ"/>
+                                <field name="tax_code" string="Mã số thuế"/>
+                            </group>
+                        </group>
+                    </div>
+
+                    <!-- Notebook -->
+                    <notebook>
+                        <page string="Hoạt động">
+                            <group>
+                                <group>
+                                    <field name="event_ids" string="Sự kiện đã tham gia" widget="many2many_tags"/>
+                                </group>
+                            </group>
+                        </page>
+                         <page string="Người liên hệ">
+                            <group>
+                                <field name="contact_name" string="Tên liên hệ"/>
+                                <field name="contact_email" string="Email liên hệ"/>
+                                <field name="contact_phone" string="SĐT liên hệ"/>
+                            </group>
+                        </page>
+                        <page string="Thông tin bổ sung">
+                            <group>
+                                <group>
+                                    <field name="address" string="Địa chỉ"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Ghi chú">
+                            <group>
+                                <field 
+                                    name="note"
+                                    string="Ghi chú"
+                                    nolabel="1"
+                                    class="note-editable odoo-editor-editable"
+                                    style="min-height:200px;"
+                                />
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
+
+                <chatter>
+                    <!-- Chatter -->
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                </chatter>
             </form>
         </field>
     </record>
@@ -24,7 +97,52 @@
         <field name="arch" type="xml">
             <list string="Nhà tuyển dụng">
                 <field name="name" string="Tên nhà tuyển dụng"/>
+                <field name="phone" string="Số điện thoại"/>
+                <field name="email" string="Email"/>
+                <field name="industry" string="Lĩnh vực hoạt động"/>
             </list>
+        </field>
+    </record>
+
+    <!-- Kanban view -->
+    <record id="eaut_crm_employer_view_kanban" model="ir.ui.view">
+        <field name="name">eaut.crm.employer.view.kanban</field>
+        <field name="model">eaut.crm.employer</field>
+        <field name="arch" type="xml">
+            <kanban string="Nhà tuyển dụng"
+                    default_group_by="stage_id"
+                    class="o_kanban_small_column">
+                    
+                <field name="stage_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_card">
+                            <div style="display: flex; align-items: center;">
+                                <div style="flex-shrink: 0; margin-right: 10px;">
+                                    <field name="photo" 
+                                        widget="image" 
+                                        class="oe_avatar eaut_crm_kanban_photo" 
+                                        options="{'size': [64, 64]}" />
+                                </div>
+                                <div>
+                                    <strong><field name="name"/></strong>
+                                    <div>
+                                        <field name="email"/>
+                                        <div><field name="phone"/></div>
+                                        <field name="industry" string="Lĩnh vực hoạt động"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_kanban_footer">
+                                <field name="tag_ids" 
+                                    widget="many2many_tags" 
+                                    string="Thẻ" 
+                                    options="{'color_field': 'color'}"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 

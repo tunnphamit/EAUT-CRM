@@ -124,7 +124,7 @@
                                 <div style="flex-shrink: 0; margin-right: 10px;">
                                     <field name="photo" 
                                         widget="image" 
-                                        class="oe_avatar student_kanban_photo" 
+                                        class="oe_avatar eaut_crm_kanban_photo" 
                                         options="{'size': [64, 64]}" />
                                 </div>
                                 <!-- Nội dung bên phải -->

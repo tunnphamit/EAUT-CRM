@@ -20,7 +20,7 @@ class EautCrmStage(models.Model):
     model_type = fields.Selection(
         [
             ('student', 'Student'),
-            ('company', 'Company')
+            ('employer', 'Employer'),
         ],
         string='Belong to',
         required=True,

@@ -13,7 +13,22 @@ class EautCrmEmployer(models.Model):
     website = fields.Char(string='Website')
     address = fields.Text(string='Address')
     photo = fields.Binary(string='Photo', attachment=True) # Ảnh đại diện
+    tax_code = fields.Char(string='Tax Code', tracking=True)
     note = fields.Html(string="Note")
+
+    # Industry
+    industry = fields.Char(string='Industry', tracking=True)
+    number_of_employees = fields.Integer(string='Number of Employees')
+    
+    # Contact Information
+    contact_name = fields.Char(string='Contact Name')
+    contact_email = fields.Char(string='Contact Email')
+    contact_phone = fields.Char(string='Contact Phone')
+
+    # Event
+    event_ids = fields.Many2many('event.event', string='Participated Events')
+
+    # MOU information
 
     # Relationship with Students
     # Danh sách sinh viên đã đăng ký với nhà tuyển dụng
@@ -23,23 +38,38 @@ class EautCrmEmployer(models.Model):
         'employer_id',
         'student_id',
         string='Students',
-        tracking=True
     )
 
     # Quan hệ với Stage
-    stage_id = fields.Many2one('eaut.crm.stage', string="Stage", tracking=True, index=True)
+    stage_id = fields.Many2one(
+        'eaut.crm.stage',
+        string="Stage",
+        tracking=True,
+        index=True,
+        group_expand='_read_group_stage_ids',
+        domain="[('model_type', '=', 'employer')]"
+    )
 
     # Relationship with Tags
-    # tag_ids = fields.Many2many(
-    #     'eaut.crm.tag',
-    #     'student_tag_rel',
-    #     'student_id',
-    #     'tag_id',
-    #     string='Tags',
-    #     tracking=True
-    # )
+    tag_ids = fields.Many2many(
+        'eaut.crm.tag',
+        'employer_tag_rel',
+        'employer_id',
+        'tag_id',
+        string='Tags'
+    )
 
     # Unique constraint for email
     _sql_constraints = [
         ('email_unique', 'unique(email)', 'Email must be unique!'),
     ]
+
+    # Override the _read_group_stage_ids method to filter stages by model_type
+    # Hiện thị các stage thuộc model_type là 'student' kể cả khi không có student nào
+    # trong stage đó
+    @api.model
+    def _read_group_stage_ids(self, stages, domain, order=None):
+        return self.env['eaut.crm.stage'].search(
+            [('model_type', '=', 'employer')],
+            order=order or 'sequence'
+        )
