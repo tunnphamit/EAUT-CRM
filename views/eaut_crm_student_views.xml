@@ -60,7 +60,6 @@
                             <group>
                                 <group>
                                     <field name="address" string="Địa chỉ"/>
-                                    <field name="support_team_id" string="Đội hỗ trợ"/>
                                 </group>
                                 <group>
                                 </group> 

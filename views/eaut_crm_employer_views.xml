@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form view -->
+    <record id="eaut_crm_employer_view_form" model="ir.ui.view">
+        <field name="name">eaut.crm.employer.view.form</field>
+        <field name="model">eaut.crm.employer</field>
+        <field name="arch" type="xml">
+            <form string="Nhà tuyển dụng">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List view -->
+    <record id="eaut_crm_employer_view_list" model="ir.ui.view">
+        <field name="name">eaut.crm.employer.view.list</field>
+        <field name="model">eaut.crm.employer</field>
+        <field name="arch" type="xml">
+            <list string="Nhà tuyển dụng">
+                <field name="name" string="Tên nhà tuyển dụng"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_eaut_crm_employer" model="ir.actions.act_window">
+        <field name="name">Nhà tuyển dụng</field>
+        <field name="res_model">eaut.crm.employer</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+</odoo>

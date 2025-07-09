@@ -23,12 +23,14 @@
     'data': [
         # 'security/security.xml',
         'views/eaut_crm_student_views.xml',
+        'views/eaut_crm_employer_views.xml',
         'views/eaut_crm_faculty_views.xml',
         'views/eaut_crm_program_views.xml',
         'views/eaut_crm_major_views.xml',
         'views/eaut_crm_support_team_views.xml',
         'views/eaut_crm_stage_views.xml',
         'views/eaut_crm_tag_views.xml',
+        'views/eaut_crm_report_views.xml',
 
         'views/eaut_crm_menus.xml',
         

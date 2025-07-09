@@ -9,22 +9,35 @@
         <!-- Student -->
         <menuitem id="menu_eaut_crm_student_management"
             name="Hướng nghiệp sinh viên" 
-            parent="menu_eaut_crm_root"/>
-
+            parent="menu_eaut_crm_root"
+            sequence="10"/>
         <menuitem id="menu_eaut_crm_student" 
             name="Sinh viên" 
             parent="menu_eaut_crm_student_management" 
             action="action_eaut_crm_student"/>
 
-        <!-- Company -->
-        <menuitem id="menu_eaut_crm_compay_management"
+        <!-- Employer - Nhà tuyển dụng -->
+        <menuitem id="menu_eaut_crm_employer_management"
             name="Hợp tác doanh nghiệp" 
-            parent="menu_eaut_crm_root"/>
+            parent="menu_eaut_crm_root"
+            sequence="20"/>
+        <menuitem id="menu_eaut_crm_employer" 
+            name="Nhà tuyển dụng" 
+            parent="menu_eaut_crm_employer_management" 
+            action="action_eaut_crm_employer"/>
+
+        <!-- Report -->
+        <menuitem id="menu_eaut_crm_report"
+            name="Báo cáo" 
+            parent="menu_eaut_crm_root"
+            action="action_eaut_crm_report"
+            sequence="30"/>
 
         <!-- Configuration -->
         <menuitem id="menu_eaut_crm_configuration"
             name="Cấu hình" 
-            parent="menu_eaut_crm_root"/>
+            parent="menu_eaut_crm_root"
+            sequence="40"/>
         <!-- Support team -->
         <menuitem id="menu_eaut_crm_support_team_management"
             name="Nhóm hỗ trợ" 
@@ -40,7 +53,6 @@
             name="Thẻ" 
             parent="menu_eaut_crm_configuration" 
             action="action_eaut_crm_tag"/>
-
         <!--  -->
         <menuitem id="menu_eaut_crm_education_title"
             name="Đào tạo" 
