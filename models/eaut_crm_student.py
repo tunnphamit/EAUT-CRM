@@ -52,26 +52,19 @@ class EautCrmStudent(models.Model):
     # Khóa học đã học
     slide_channel_ids = fields.Many2many('slide.channel', string="Participated Courses")
 
-    # Ràng buộc Unique cho mã Sinh viên và Email
-    _sql_constraints = [
-        ('student_code_unique', 'unique(code)', 'Student Code must be unique!'),
-        ('email_unique', 'unique(email)', 'Email must be unique!'),
-    ]
-
-    # # Quan hệ với Support Team
-    support_team_id = fields.Many2one('eaut.crm.eaut_support_team', string='Support Team')
+    # Quan hệ với Support Team
+    # support_team_id = fields.Many2one('eaut.crm.eaut_support_team', string='Support Team')
 
     # Quan hệ với Stage
-    stage_id = fields.Many2one('eaut.crm.stage', string="Stage", tracking=True, index=True)
-
-    # stage_id = fields.Many2one(
-    #     'eaut.crm.stage',
-    #     string="Stage",
-    #     tracking=True,
-    #     index=True,
-    #     # domain="[('model_type', '=', 'student')]"
-    # )
-
+    # stage_id = fields.Many2one('eaut.crm.stage', string="Stage", tracking=True, index=True)
+    stage_id = fields.Many2one(
+        'eaut.crm.stage',
+        string="Stage",
+        tracking=True,
+        index=True,
+        group_expand='_read_group_stage_ids',
+        domain="[('model_type', '=', 'student')]"
+    )
     tag_ids = fields.Many2many(
         'eaut.crm.tag',
         'student_tag_rel',
@@ -81,8 +74,23 @@ class EautCrmStudent(models.Model):
         tracking=True
     )
 
-    # Validation
+    # Override the _read_group_stage_ids method to filter stages by model_type
+    # Hiện thị các stage thuộc model_type là 'student' kể cả khi không có student nào
+    # trong stage đó
+    @api.model
+    def _read_group_stage_ids(self, stages, domain, order=None):
+        return self.env['eaut.crm.stage'].search(
+            [('model_type', '=', 'student')],
+            order=order or 'sequence'
+        )
+    
+    # Ràng buộc Unique cho mã Sinh viên và Email
+    _sql_constraints = [
+        ('student_code_unique', 'unique(code)', 'Student Code must be unique!'),
+        ('email_unique', 'unique(email)', 'Email must be unique!'),
+    ]
 
+    # Validation
     # Email validation
     @api.constrains('email')
     def _check_email_format(self):
