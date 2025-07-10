@@ -18,7 +18,8 @@ class EautCrmStudent(models.Model):
     note = fields.Html(string="Note")
     address = fields.Text(string='Address')
 
-    # tag_ids = fields.Many2many('eaut.crm.student.tag', string='Tags')
+    have_cv = fields.Boolean(string='Have CV', default=False)
+    cv_link = fields.Char(string='CV Link')
 
     # Quan hệ Khoa, Khóa, Ngành
     faculty_ids = fields.Many2many(

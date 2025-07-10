@@ -24,12 +24,12 @@
                     </div>
 
                     <div>
-                        <group>
-                            <group string="Thông tin chung">
+                        <group string="Thông tin chung">
+                            <group>
                                 <field name="email" string="Địa chỉ email"/>
                                 <field name="phone" string="SĐT Công ty" widget="phone"/>
                                 <field name="industry" string="Lĩnh vực hoạt động"/>
-                                <field name="number_of_employees" string="Số lượng nhân viên)"/>
+                                <field name="number_of_employees" string="Số lượng nhân viên"/>
                                 <field name="tag_ids" 
                                     widget="many2many_tags" 
                                     string="Thẻ"
