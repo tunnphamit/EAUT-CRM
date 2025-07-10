@@ -1,9 +1,9 @@
 
 from odoo import fields, models, api
 
-class EautCrmStudentTag(models.Model):
-    _name = 'eaut.crm.student.tag'
-    _description = 'Student Tag'
+class EautCrmTag(models.Model):
+    _name = 'eaut.crm.tag'
+    _description = 'Tag'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Tag Name', required=True)

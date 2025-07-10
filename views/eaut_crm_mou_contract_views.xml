@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form view -->
+    <record id="eaut_crm_mou_contract_view_form" model="ir.ui.view">
+        <field name="name">eaut.crm.mou.contract.view.form</field>
+        <field name="model">eaut.crm.mou.contract</field>
+        <field name="arch" type="xml">
+            <form string="MOU Contract">
+                <header>
+                </header>
+
+                <sheet>
+                    <h1 class="oe_title">
+                        <field name="title" placeholder="Tiêu đề"/>
+                    </h1>
+                    <group>
+                        <field name="employer_id" string="Nhà tuyển dụng" widget="many2one" options="{'no_create': True}"/>
+                        <field name="start_date" string="Ngày bắt đầu"/>
+                        <field name="end_date" string="Ngày kết thúc"/>
+                    </group>
+
+                    <group>
+                        <field name="attached_file" filename="attached_filename"/>
+                        <field name="attached_filename" invisible="1"/>
+
+                        <!-- Overview PDF file -->
+                        <!-- <separator string="Hợp đồng"/>
+
+                        <field name="attached_file" invisible="1"/>
+
+                        <div class="oe_form_field">
+                            <field name="attached_file" widget="pdf_viewer" options="{'height': '600px'}"/>
+                        </div> -->
+                    </group>
+                </sheet>
+
+                <chatter>
+                    <!-- Chatter -->
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <!-- List view -->
+    <record id="eaut_crm_mou_contract_view_list" model="ir.ui.view">
+        <field name="name">eaut.crm.mou.contract.view.list</field>
+        <field name="model">eaut.crm.mou.contract</field>
+        <field name="arch" type="xml">
+            <list string="MOU Contracts" default_group_by="employer_id">
+                <field name="title" string="Tiêu đề"/>
+                <field name="employer_id" string="Nhà tuyển dụng"/>
+                <field name="start_date" string="Ngày bắt đầu"/>
+                <field name="end_date" string="Ngày kết thúc"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban view -->
+    <record id="eaut_crm_mou_contract_view_kanban" model="ir.ui.view">
+        <field name="name">eaut.crm.mou.contract.view.kanban</field>
+        <field name="model">eaut.crm.mou.contract</field>
+        <field name="arch" type="xml">
+            <kanban string="MOU Contracts" default_group_by="employer_id">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_card">
+                            <div class="oe_kanban_details">
+                                <h4><field name="title"/></h4>
+                                <div class="oe_kanban_content">
+                                    <div>
+                                        <field name="employer_id"
+                                            string="Nhà tuyển dụng"
+                                            widget="many2one" 
+                                            options="{'no_create': True}"/>
+                                    </div>
+                                    <div>
+                                        <b><field name="start_date" string="Ngày bắt đầu"/></b>
+                                    </div>
+                                    <div>
+                                        <b><field name="end_date" string="Ngày kết thúc"/></b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="eaut_crm_mou_contract_search_view" model="ir.ui.view">
+        <field name="name">eaut.crm.mou.contract.search</field>
+        <field name="model">eaut.crm.mou.contract</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Default filters -->
+
+                <field name="title"/>
+                <field name="employer_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </search>
+        </field>
+    </record>
+
+
+    <!-- Actions -->
+    <record id="eaut_crm_mou_contract_action" model="ir.actions.act_window">
+        <field name="name">MOU Contracts</field>
+        <field name="res_model">eaut.crm.mou.contract</field>
+        <field name="view_mode">kanban,list,form</field>
+        <!-- Use kanban view by default -->
+        <!-- <field name="view_id" ref="eaut_crm_mou_contract_view_kanban"/> -->
+    </record>
+</odoo>

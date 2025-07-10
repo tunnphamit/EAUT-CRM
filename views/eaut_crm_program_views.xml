@@ -9,9 +9,9 @@
             <form string="Program">
                 <sheet>
                     <group>
-                        <field name="code"/>
-                        <field name="name"/>
-                        <field name="start_year"/>
+                        <!-- <field name="code"/> -->
+                        <field name="name" string="Khóa"/>
+                        <field name="start_year" string="Năm bắt đầu"/>
                     </group>
                 </sheet>
             </form>
@@ -24,8 +24,8 @@
         <field name="model">eaut.crm.program</field>
         <field name="arch" type="xml">
             <list string="Programs">
-                <field name="code"/>
-                <field name="name"/> 
+                <field name="name" string="Khóa"/> 
+                <!-- <field name="code"/> -->
             </list>
         </field>
     </record>

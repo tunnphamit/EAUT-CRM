@@ -9,7 +9,6 @@ class EautCrmSupportTeam(models.Model):
     name = fields.Char(string='Support Team', required=True, tracking=True)
     description = fields.Text(string='Description')
     note = fields.Html(string="Note")
-    
     leader_id = fields.Many2one(
         'res.partner',
         string='Team Leader',

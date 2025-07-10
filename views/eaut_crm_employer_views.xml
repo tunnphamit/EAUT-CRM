@@ -2,11 +2,11 @@
 <odoo>
 
     <!-- Form view -->
-    <record id="eaut_crm_student_view_form" model="ir.ui.view">
-        <field name="name">eaut.crm.student.view.form</field>
-        <field name="model">eaut.crm.student</field>
+    <record id="eaut_crm_employer_view_form" model="ir.ui.view">
+        <field name="name">eaut.crm.employer.view.form</field>
+        <field name="model">eaut.crm.employer</field>
         <field name="arch" type="xml">
-            <form string="Students">
+            <form string="Employers">
                 <header>
                     <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
@@ -24,21 +24,21 @@
                     </div>
 
                     <div>
-                        <group>
-                            <group string="Thông tin cá nhân">
-                                <field name="code" string="Mã sinh viên"/>
+                        <group string="Thông tin chung">
+                            <group>
                                 <field name="email" string="Địa chỉ email"/>
-                                <field name="phone" string="Số điện thoại" widget="phone"/>
-                                <field name="date_of_birth" string="Ngày sinh"/>
+                                <field name="phone" string="SĐT Công ty" widget="phone"/>
+                                <field name="industry" string="Lĩnh vực hoạt động"/>
+                                <field name="number_of_employees" string="Số lượng nhân viên"/>
                                 <field name="tag_ids" 
                                     widget="many2many_tags" 
                                     string="Thẻ"
                                     options="{'color_field': 'color'}"/>
                             </group>
-                            <group string="Thông tin đào tạo">
-                                <field name="faculty_ids" widget="many2many_tags" string="Khoa"/>
-                                <field name="major_ids" widget="many2many_tags" string="Ngành"/>
-                                <field name="program_ids" widget="many2many_tags" string="Khóa"/>
+                            <group>
+                                <field name="website" string="Website"/>
+                                <field name="address" string="Địa chỉ"/>
+                                <field name="tax_code" string="Mã số thuế"/>
                             </group>
                         </group>
                     </div>
@@ -50,17 +50,17 @@
                                 <group>
                                     <field name="event_ids" string="Sự kiện đã tham gia" widget="many2many_tags"/>
                                 </group>
-                                <group>
-                                    <field name="slide_channel_ids" string="Khóa học đã tham gia" widget="many2many_tags"/>
-                                </group>
+                            </group>
+                        </page>
+                         <page string="Người liên hệ">
+                            <group>
+                                <field name="contact_name" string="Tên liên hệ"/>
+                                <field name="contact_email" string="Email liên hệ"/>
+                                <field name="contact_phone" string="SĐT liên hệ"/>
                             </group>
                         </page>
                         <page string="Thông tin bổ sung">
                             <group>
-                                <group>
-                                    <field name="have_cv" string="Đã có CV" widget="boolean"/>
-                                    <field name="cv_link" string="CV Link" widget="url"/>
-                                </group>
                                 <group>
                                     <field name="address" string="Địa chỉ"/>
                                 </group>
@@ -78,7 +78,6 @@
                             </group>
                         </page>
                     </notebook>
-                    
                 </sheet>
 
                 <chatter>
@@ -87,32 +86,30 @@
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>
                 </chatter>
-
             </form>
         </field>
     </record>
 
     <!-- List view -->
-    <record id="eaut_crm_student_view_list" model="ir.ui.view">
-        <field name="name">eaut.crm.student.view.list</field>
-        <field name="model">eaut.crm.student</field>
+    <record id="eaut_crm_employer_view_list" model="ir.ui.view">
+        <field name="name">eaut.crm.employer.view.list</field>
+        <field name="model">eaut.crm.employer</field>
         <field name="arch" type="xml">
-            <list string="Students">
-                <field name="code"/>
-                <field name="name"/>
-                <field name="email"/>
-                <field name="phone"/>
-                <field name="date_of_birth"/>
+            <list string="Nhà tuyển dụng">
+                <field name="name" string="Tên nhà tuyển dụng"/>
+                <field name="phone" string="Số điện thoại"/>
+                <field name="email" string="Email"/>
+                <field name="industry" string="Lĩnh vực hoạt động"/>
             </list>
         </field>
     </record>
 
     <!-- Kanban view -->
-    <record id="eaut_crm_student_view_kanban" model="ir.ui.view">
-        <field name="name">eaut.crm.student.view.kanban</field>
-        <field name="model">eaut.crm.student</field>
+    <record id="eaut_crm_employer_view_kanban" model="ir.ui.view">
+        <field name="name">eaut.crm.employer.view.kanban</field>
+        <field name="model">eaut.crm.employer</field>
         <field name="arch" type="xml">
-            <kanban string="Students"
+            <kanban string="Nhà tuyển dụng"
                     default_group_by="stage_id"
                     class="o_kanban_small_column">
                     
@@ -121,20 +118,18 @@
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_kanban_card">
                             <div style="display: flex; align-items: center;">
-                                <!-- Ảnh bên trái -->
                                 <div style="flex-shrink: 0; margin-right: 10px;">
                                     <field name="photo" 
                                         widget="image" 
                                         class="oe_avatar eaut_crm_kanban_photo" 
                                         options="{'size': [64, 64]}" />
                                 </div>
-                                <!-- Nội dung bên phải -->
                                 <div>
                                     <strong><field name="name"/></strong>
                                     <div>
                                         <field name="email"/>
-                                        <field name="program_ids" string="Khóa"/>
-                                        <field name="major_ids" string="Ngành"/>
+                                        <div><field name="phone"/></div>
+                                        <field name="industry" string="Lĩnh vực hoạt động"/>
                                     </div>
                                 </div>
                             </div>
@@ -152,10 +147,10 @@
     </record>
 
     <!-- Actions -->
-    <record id="action_eaut_crm_student" model="ir.actions.act_window">
-        <field name="name">Student</field>
-        <field name="res_model">eaut.crm.student</field>
+    <record id="action_eaut_crm_employer" model="ir.actions.act_window">
+        <field name="name">Nhà tuyển dụng</field>
+        <field name="res_model">eaut.crm.employer</field>
         <field name="view_mode">kanban,list,form</field>
-        <!-- <field name="domain">[('stage_id.model_type', '=', 'student')]</field> -->
     </record>
+
 </odoo>

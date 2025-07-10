@@ -13,27 +13,17 @@
                         <group string="Thành viên" col="2">
                             <field name="leader_id" string="Trưởng nhóm"/>
                             <field name="member_ids" widget="many2many_tags"/>
+                            <field name="description" string="Mô tả"/> 
                         </group>
                     </group>
 
                     <!-- Notebook -->
                     <notebook>
-                        <page string="Ghi chú">
+                        <page string="Ghi chú nội bộ">
                             <group>
                                 <field 
                                     name="note"
                                     string="Ghi chú"
-                                    nolabel="1"
-                                    class="note-editable odoo-editor-editable"
-                                    style="min-height:200px;"
-                                /> 
-                            </group>
-                        </page>
-                        <page string="Mô tả">
-                            <group>
-                                <field 
-                                    name="description"
-                                    string="Mô tả"
                                     nolabel="1"
                                     class="note-editable odoo-editor-editable"
                                     style="min-height:200px;"
