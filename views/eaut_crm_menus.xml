@@ -25,6 +25,10 @@
             name="Nhà tuyển dụng" 
             parent="menu_eaut_crm_employer_management" 
             action="action_eaut_crm_employer"/>
+        <menuitem id="menu_eaut_crm_mou_contract" 
+            name="Hợp đồng MOU"
+            parent="menu_eaut_crm_employer_management" 
+            action="eaut_crm_mou_contract_action"/>
 
         <!-- Report -->
         <menuitem id="menu_eaut_crm_report"

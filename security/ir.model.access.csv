@@ -7,3 +7,4 @@ access_eaut_crm_support_team_all,EAUT CRM Support Team,model_eaut_crm_support_te
 access_eaut_crm_stage_all,EAUT CRM Stage,model_eaut_crm_stage,,1,1,1,1
 access_eaut_crm_tag_all,EAUT CRM Tag,model_eaut_crm_tag,,1,1,1,1
 access_eaut_crm_employer_all,EAUT CRM Employer,model_eaut_crm_employer,,1,1,1,1
+access_eaut_crm_mou_contract_all,EAUT CRM MOU Contract,model_eaut_crm_mou_contract,,1,1,1,1
