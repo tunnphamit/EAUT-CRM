@@ -6,7 +6,7 @@ class EautCrmMouContract(models.Model):
     _description = 'MOU Contract'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    title = fields.Char(string='Title', required=True, tracking=True)
+    name = fields.Char(string='Title', required=True, tracking=True)
     employer_id = fields.Many2one('eaut.crm.employer', string='Employer', required=True, tracking=True)
     # Valid umtil
     start_date = fields.Date(string='Start Date', required=True, tracking=True)

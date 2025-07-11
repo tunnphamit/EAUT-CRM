@@ -45,24 +45,22 @@
 
                     <!-- Notebook -->
                     <notebook>
-                        <page string="Hoạt động">
-                            <group>
-                                <group>
-                                    <field name="event_ids" string="Sự kiện đã tham gia" widget="many2many_tags"/>
-                                </group>
-                            </group>
-                        </page>
-                         <page string="Người liên hệ">
-                            <group>
-                                <field name="contact_name" string="Tên liên hệ"/>
-                                <field name="contact_email" string="Email liên hệ"/>
-                                <field name="contact_phone" string="SĐT liên hệ"/>
-                            </group>
-                        </page>
                         <page string="Thông tin bổ sung">
                             <group>
                                 <group>
                                     <field name="address" string="Địa chỉ"/>
+                                </group>
+                                <group string="Người liên hệ">
+                                    <field name="contact_name" string="Tên liên hệ"/>
+                                    <field name="contact_email" string="Email liên hệ"/>
+                                    <field name="contact_phone" string="SĐT liên hệ" widget="phone"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Hoạt động">
+                            <group>
+                                <group>
+                                    <field name="event_ids" string="Sự kiện đã tham gia" widget="many2many_tags"/>
                                 </group>
                             </group>
                         </page>
