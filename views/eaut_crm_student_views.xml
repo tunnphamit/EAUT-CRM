@@ -73,7 +73,8 @@
                                     string="Ghi chú"
                                     nolabel="1"
                                     class="note-editable odoo-editor-editable"
-                                    style="min-height:200px;"/>
+                                    style="min-height:200px;"
+                                />
                             </group>
                         </page>
                     </notebook>

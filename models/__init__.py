@@ -8,3 +8,4 @@ from . import eaut_crm_support_team
 from . import eaut_crm_stage
 from . import eaut_crm_tag
 from . import eaut_crm_mou_contract
+from . import eaut_crm_event_customize

@@ -9,6 +9,9 @@ class EautCrmStudent(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     # tracking=True -> Khi trường thay đổi, Odoo sẽ ghi lại lịch sử thay đổi vào Chatter
+
+    # Storage feature
+    # active = fields.Boolean(default=True)
     code = fields.Char(string="Student Code", required=True, tracking=True)
     name = fields.Char(string='Full Name', required=True, tracking=True)
     email = fields.Char(string='Email', required=True, tracking=True)
