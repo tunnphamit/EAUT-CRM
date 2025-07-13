@@ -44,6 +44,6 @@
     },
     'installable': True,
     'application': True,
-    'icon': '/EAUT-Career-Center/static/description/icon.png',
+    'icon': 'EAUT-Career-Center/static/description/icon.png',
     'license': 'LGPL-3',
 }
