@@ -4,7 +4,7 @@
         <menuitem 
             id="menu_eaut_crm_root" 
             name="EAUT Career Center"
-            web_icon="EAUT-Career-Center/static/description/icon.png"/>
+            web_icon="eaut_career_center,static/description/icon.png"/>
 
         <!-- Student -->
         <menuitem id="menu_eaut_crm_student_management"
