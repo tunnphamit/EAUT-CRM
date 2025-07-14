@@ -3,8 +3,8 @@
     <data>
         <menuitem 
             id="menu_eaut_crm_root" 
-            name="EAUT CRM"
-            web_icon="eaut_crm,static/description/icon.png"/>
+            name="EAUT Career Center"
+            web_icon="EAUT-Career-Center/static/description/icon.png"/>
 
         <!-- Student -->
         <menuitem id="menu_eaut_crm_student_management"
