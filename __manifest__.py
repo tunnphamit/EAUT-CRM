@@ -39,11 +39,11 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'EAUT-Career-Center/static/src/css/student_view.css'
+            'eaut_career_center/static/src/css/student_view.css'
         ],
     },
     'installable': True,
     'application': True,
-    'icon': 'EAUT-Career-Center/static/description/icon.png',
+    'icon': '/eaut_career_center/static/description/icon.png',
     'license': 'LGPL-3',
 }
