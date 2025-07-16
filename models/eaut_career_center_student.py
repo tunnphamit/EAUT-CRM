@@ -25,28 +25,21 @@ class EautCrmStudent(models.Model):
     cv_link = fields.Char(string='CV Link')
 
     # Quan hệ Khoa, Khóa, Ngành
-    faculty_ids = fields.Many2many(
+    faculty_id = fields.Many2one(
         'eaut.career.center.faculty',
-        'student_faculty_rel',
-        'student_id',
-        'faculty_id',
-        string='Faculties',
+        string='Faculty',
         tracking=True
     )
-    major_ids = fields.Many2many(
+
+    major_id = fields.Many2one(
         'eaut.career.center.major',
-        'student_major_rel',
-        'student_id',
-        'major_id',
-        string='Majors',
+        string='Major',
         tracking=True
     )
-    program_ids = fields.Many2many(
+    
+    program_id = fields.Many2one(
         'eaut.career.center.program',
-        'student_program_rel',
-        'student_id',
-        'program_id',
-        string='Programs',
+        string='Program',
         tracking=True
     )
 

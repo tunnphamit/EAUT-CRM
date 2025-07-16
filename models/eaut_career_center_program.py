@@ -5,9 +5,6 @@ class EautCrmProgram(models.Model):
     _description = 'Program' # Khóa
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    # # Mã khóa (unique) (ví dụ: K21)
-    # code = fields.Char(string='Program code', required=True, tracking=True)
-
     # Tên Khóa (ví dụ: K11)
     name = fields.Char(string='Program name', required=True, tracking=True)
     

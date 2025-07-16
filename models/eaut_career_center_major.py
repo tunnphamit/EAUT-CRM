@@ -6,9 +6,6 @@ class EautCrmMajor(models.Model):
     _description = 'Major' # Ngành
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    # Mã ngành (unique)
-    code = fields.Char(string='Major code', required=True, tracking=True)
-
     # Tên ngành
     name = fields.Char(string='Major name', required=True, tracking=True)
 

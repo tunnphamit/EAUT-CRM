@@ -36,9 +36,9 @@
                                     options="{'color_field': 'color'}"/>
                             </group>
                             <group string="Thông tin đào tạo">
-                                <field name="faculty_ids" widget="many2many_tags" string="Khoa"/>
-                                <field name="major_ids" widget="many2many_tags" string="Ngành"/>
-                                <field name="program_ids" widget="many2many_tags" string="Khóa"/>
+                                <field name="faculty_id" string="Khoa"/>
+                                <field name="major_id" string="Ngành"/>
+                                <field name="program_id" string="Khóa"/>
                             </group>
                         </group>
                     </div>
@@ -133,8 +133,8 @@
                                     <strong><field name="name"/></strong>
                                     <div>
                                         <field name="email"/>
-                                        <field name="program_ids" string="Khóa"/>
-                                        <field name="major_ids" string="Ngành"/>
+                                        <field name="program_id" string="Khóa"/>
+                                        <field name="major_id" string="Ngành"/>
                                     </div>
                                 </div>
                             </div>

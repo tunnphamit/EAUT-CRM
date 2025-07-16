@@ -5,9 +5,6 @@ class EautCrmFaculty(models.Model):
     _description = 'Faculty' # Khoa
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    # Mã Khoa
-    code = fields.Char(string='Faculty code', required=True, tracking=True)
-
     # Tên Khoa
     name = fields.Char(string='Faculty name', required=True, tracking=True)
 
