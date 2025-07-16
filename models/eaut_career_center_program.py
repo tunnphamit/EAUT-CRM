@@ -1,12 +1,9 @@
 from odoo import fields, models
 
 class EautCrmProgram(models.Model):
-    _name = 'eaut.crm.program'
+    _name = 'eaut.career.center.program'
     _description = 'Program' # Khóa
     _inherit = ['mail.thread', 'mail.activity.mixin']
-
-    # # Mã khóa (unique) (ví dụ: K21)
-    # code = fields.Char(string='Program code', required=True, tracking=True)
 
     # Tên Khóa (ví dụ: K11)
     name = fields.Char(string='Program name', required=True, tracking=True)
@@ -16,7 +13,7 @@ class EautCrmProgram(models.Model):
 
     # Quan hệ N:N: 1 chương trình nhiều sinh viên, 1 sinh viên nhiều chương trình
     student_ids = fields.Many2many(
-        'eaut.crm.student',
+        'eaut.career.center.student',
         'student_program_rel',
         'program_id',
         'student_id',

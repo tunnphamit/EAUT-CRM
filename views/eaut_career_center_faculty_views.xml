@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form view -->
+    <record id="eaut_career_center_faculty_view_form" model="ir.ui.view">
+        <field name="name">eaut.career.center.faculty.view.form</field>
+        <field name="model">eaut.career.center.faculty</field>
+        <field name="arch" type="xml">
+            <form string="Khoa">
+                <sheet>
+                    <group>
+                        <field name="name" string="Tên Khoa"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List view -->
+    <record id="eaut_career_center_faculty_view_list" model="ir.ui.view">
+        <field name="name">eaut.career.center.faculty.view.list</field>
+        <field name="model">eaut.career.center.faculty</field>
+        <field name="arch" type="xml">
+            <list string="Khoa" editable="top">
+                <field name="name" string="Tên Khoa"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_eaut_career_center_faculty" model="ir.actions.act_window">
+        <field name="name">Khoa</field>
+        <field name="res_model">eaut.career.center.faculty</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+</odoo>

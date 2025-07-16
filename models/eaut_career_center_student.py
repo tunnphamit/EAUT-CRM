@@ -4,11 +4,14 @@ import re
 from odoo.exceptions import ValidationError
 
 class EautCrmStudent(models.Model):
-    _name = 'eaut.crm.student'
+    _name = 'eaut.career.center.student'
     _description = 'Student'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     # tracking=True -> Khi trường thay đổi, Odoo sẽ ghi lại lịch sử thay đổi vào Chatter
+
+    # Storage feature
+    # active = fields.Boolean(default=True)
     code = fields.Char(string="Student Code", required=True, tracking=True)
     name = fields.Char(string='Full Name', required=True, tracking=True)
     email = fields.Char(string='Email', required=True, tracking=True)
@@ -22,28 +25,21 @@ class EautCrmStudent(models.Model):
     cv_link = fields.Char(string='CV Link')
 
     # Quan hệ Khoa, Khóa, Ngành
-    faculty_ids = fields.Many2many(
-        'eaut.crm.faculty',
-        'student_faculty_rel',
-        'student_id',
-        'faculty_id',
-        string='Faculties',
+    faculty_id = fields.Many2one(
+        'eaut.career.center.faculty',
+        string='Faculty',
         tracking=True
     )
-    major_ids = fields.Many2many(
-        'eaut.crm.major',
-        'student_major_rel',
-        'student_id',
-        'major_id',
-        string='Majors',
+
+    major_id = fields.Many2one(
+        'eaut.career.center.major',
+        string='Major',
         tracking=True
     )
-    program_ids = fields.Many2many(
-        'eaut.crm.program',
-        'student_program_rel',
-        'student_id',
-        'program_id',
-        string='Programs',
+    
+    program_id = fields.Many2one(
+        'eaut.career.center.program',
+        string='Program',
         tracking=True
     )
 
@@ -54,12 +50,12 @@ class EautCrmStudent(models.Model):
     slide_channel_ids = fields.Many2many('slide.channel', string="Participated Courses")
 
     # Quan hệ với Support Team
-    # support_team_id = fields.Many2one('eaut.crm.eaut_support_team', string='Support Team')
+    # support_team_id = fields.Many2one('eaut.career.center.eaut_support_team', string='Support Team')
 
     # Quan hệ với Stage
-    # stage_id = fields.Many2one('eaut.crm.stage', string="Stage", tracking=True, index=True)
+    # stage_id = fields.Many2one('eaut.career.center.stage', string="Stage", tracking=True, index=True)
     stage_id = fields.Many2one(
-        'eaut.crm.stage',
+        'eaut.career.center.stage',
         string="Stage",
         tracking=True,
         index=True,
@@ -67,7 +63,7 @@ class EautCrmStudent(models.Model):
         domain="[('model_type', '=', 'student')]"
     )
     tag_ids = fields.Many2many(
-        'eaut.crm.tag',
+        'eaut.career.center.tag',
         'student_tag_rel',
         'student_id',
         'tag_id',
@@ -80,7 +76,7 @@ class EautCrmStudent(models.Model):
     # trong stage đó
     @api.model
     def _read_group_stage_ids(self, stages, domain, order=None):
-        return self.env['eaut.crm.stage'].search(
+        return self.env['eaut.career.center.stage'].search(
             [('model_type', '=', 'student')],
             order=order or 'sequence'
         )

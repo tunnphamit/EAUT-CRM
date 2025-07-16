@@ -2,7 +2,7 @@
 from odoo import fields, models, api
 
 class EautCrmTag(models.Model):
-    _name = 'eaut.crm.tag'
+    _name = 'eaut.career.center.tag'
     _description = 'Tag'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 

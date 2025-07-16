@@ -2,9 +2,9 @@
 <odoo>
 
     <!-- Form view -->
-    <record id="eaut_crm_stage_view_form" model="ir.ui.view">
-        <field name="name">eaut.crm.stage.view.form</field>
-        <field name="model">eaut.crm.stage</field>
+    <record id="eaut_career_center_stage_view_form" model="ir.ui.view">
+        <field name="name">eaut.career.center.stage.view.form</field>
+        <field name="model">eaut.career.center.stage</field>
         <field name="arch" type="xml">
             <form string="Stage">
                 <sheet>
@@ -19,9 +19,9 @@
     </record>
 
     <!-- List view -->
-    <record id="eaut_crm_stage_view_list" model="ir.ui.view">
-        <field name="name">eaut.crm.stage.view.list</field>
-        <field name="model">eaut.crm.stage</field>
+    <record id="eaut_career_center_stage_view_list" model="ir.ui.view">
+        <field name="name">eaut.career.center.stage.view.list</field>
+        <field name="model">eaut.career.center.stage</field>
         <field name="arch" type="xml">
             <list string="Stages" default_group_by="model_type">
                 <field name="sequence" widget="handle"/>
@@ -33,9 +33,9 @@
     </record>
 
     <!-- Actions -->
-    <record id="action_eaut_crm_stage" model="ir.actions.act_window">
+    <record id="action_eaut_career_center_stage" model="ir.actions.act_window">
         <field name="name">Stage</field>
-        <field name="res_model">eaut.crm.stage</field>
+        <field name="res_model">eaut.career.center.stage</field>
         <field name="view_mode">list,form</field>
     </record>
 
