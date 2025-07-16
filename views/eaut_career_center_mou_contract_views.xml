@@ -18,6 +18,8 @@
                         <field name="employer_id" string="Nhà tuyển dụng" widget="many2one" options="{'no_create': True}"/>
                         <field name="start_date" string="Ngày bắt đầu"/>
                         <field name="end_date" string="Ngày kết thúc"/>
+                        <field name="scope_of_cooperation" string="Phạm vi hợp tác"/>
+                        <field name="cooperation_details" string="Chi tiết hợp tác"/>
                     </group>
 
                     <group>
