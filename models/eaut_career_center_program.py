@@ -1,7 +1,7 @@
 from odoo import fields, models
 
 class EautCrmProgram(models.Model):
-    _name = 'eaut.crm.program'
+    _name = 'eaut.career.center.program'
     _description = 'Program' # Khóa
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
@@ -16,7 +16,7 @@ class EautCrmProgram(models.Model):
 
     # Quan hệ N:N: 1 chương trình nhiều sinh viên, 1 sinh viên nhiều chương trình
     student_ids = fields.Many2many(
-        'eaut.crm.student',
+        'eaut.career.center.student',
         'student_program_rel',
         'program_id',
         'student_id',

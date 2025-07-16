@@ -2,7 +2,7 @@
 from odoo import fields, models, api
 
 class EautCrmStage(models.Model):
-    _name = 'eaut.crm.stage'
+    _name = 'eaut.career.center.stage'
     _description = 'EAUT CRM Stage'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'sequence'

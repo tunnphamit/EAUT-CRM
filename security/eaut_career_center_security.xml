@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Category -->
+        <record id="module_category_eaut_career_center" model="ir.module.category">
+            <field name="name">EAUT Career Center</field>
+            <field name="description">Phân quyền cho hệ thống hướng nghiệp EAUT</field>
+            <field name="sequence">15</field>
+        </record>
+
+        <!-- Groups -->
+        <record id="group_eaut_career_center_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="eaut_career_center.module_category_eaut_career_center"/>
+        </record>
+
+        <record id="group_eaut_career_center_admin" model="res.groups">
+            <field name="name">Admin</field>
+            <field name="implied_ids" eval="[(4, ref('eaut_career_center.group_eaut_career_center_user'))]"/>
+            <field name="category_id" ref="eaut_career_center.module_category_eaut_career_center"/>
+        </record>
+    </data>
+</odoo>

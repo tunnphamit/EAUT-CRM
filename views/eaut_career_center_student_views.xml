@@ -2,9 +2,9 @@
 <odoo>
 
     <!-- Form view -->
-    <record id="eaut_crm_student_view_form" model="ir.ui.view">
-        <field name="name">eaut.crm.student.view.form</field>
-        <field name="model">eaut.crm.student</field>
+    <record id="eaut_career_center_student_view_form" model="ir.ui.view">
+        <field name="name">eaut.career.center.student.view.form</field>
+        <field name="model">eaut.career.center.student</field>
         <field name="arch" type="xml">
             <form string="Students">
                 <header>
@@ -93,9 +93,9 @@
     </record>
 
     <!-- List view -->
-    <record id="eaut_crm_student_view_list" model="ir.ui.view">
-        <field name="name">eaut.crm.student.view.list</field>
-        <field name="model">eaut.crm.student</field>
+    <record id="eaut_career_center_student_view_list" model="ir.ui.view">
+        <field name="name">eaut.career.center.student.view.list</field>
+        <field name="model">eaut.career.center.student</field>
         <field name="arch" type="xml">
             <list string="Students">
                 <field name="code"/>
@@ -108,9 +108,9 @@
     </record>
 
     <!-- Kanban view -->
-    <record id="eaut_crm_student_view_kanban" model="ir.ui.view">
-        <field name="name">eaut.crm.student.view.kanban</field>
-        <field name="model">eaut.crm.student</field>
+    <record id="eaut_career_center_student_view_kanban" model="ir.ui.view">
+        <field name="name">eaut.career.center.student.view.kanban</field>
+        <field name="model">eaut.career.center.student</field>
         <field name="arch" type="xml">
             <kanban string="Students"
                     default_group_by="stage_id"
@@ -125,7 +125,7 @@
                                 <div style="flex-shrink: 0; margin-right: 10px;">
                                     <field name="photo" 
                                         widget="image" 
-                                        class="oe_avatar eaut_crm_kanban_photo" 
+                                        class="oe_avatar eaut_career_center_kanban_photo" 
                                         options="{'size': [64, 64]}" />
                                 </div>
                                 <!-- Nội dung bên phải -->
@@ -152,9 +152,9 @@
     </record>
 
     <!-- Actions -->
-    <record id="action_eaut_crm_student" model="ir.actions.act_window">
+    <record id="action_eaut_career_center_student" model="ir.actions.act_window">
         <field name="name">Student</field>
-        <field name="res_model">eaut.crm.student</field>
+        <field name="res_model">eaut.career.center.student</field>
         <field name="view_mode">kanban,list,form</field>
         <!-- <field name="domain">[('stage_id.model_type', '=', 'student')]</field> -->
     </record>

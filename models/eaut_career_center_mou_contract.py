@@ -2,12 +2,12 @@
 from odoo import models, fields, api
 
 class EautCrmMouContract(models.Model):
-    _name = 'eaut.crm.mou.contract'
+    _name = 'eaut.career.center.mou.contract'
     _description = 'MOU Contract'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Title', required=True, tracking=True)
-    employer_id = fields.Many2one('eaut.crm.employer', string='Employer', required=True, tracking=True)
+    employer_id = fields.Many2one('eaut.career.center.employer', string='Employer', required=True, tracking=True)
     # Valid umtil
     start_date = fields.Date(string='Start Date', required=True, tracking=True)
     end_date = fields.Date(string='End Date', required=True, tracking=True)

@@ -4,7 +4,7 @@ import re
 from odoo.exceptions import ValidationError
 
 class EautCrmStudent(models.Model):
-    _name = 'eaut.crm.student'
+    _name = 'eaut.career.center.student'
     _description = 'Student'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
@@ -26,7 +26,7 @@ class EautCrmStudent(models.Model):
 
     # Quan hệ Khoa, Khóa, Ngành
     faculty_ids = fields.Many2many(
-        'eaut.crm.faculty',
+        'eaut.career.center.faculty',
         'student_faculty_rel',
         'student_id',
         'faculty_id',
@@ -34,7 +34,7 @@ class EautCrmStudent(models.Model):
         tracking=True
     )
     major_ids = fields.Many2many(
-        'eaut.crm.major',
+        'eaut.career.center.major',
         'student_major_rel',
         'student_id',
         'major_id',
@@ -42,7 +42,7 @@ class EautCrmStudent(models.Model):
         tracking=True
     )
     program_ids = fields.Many2many(
-        'eaut.crm.program',
+        'eaut.career.center.program',
         'student_program_rel',
         'student_id',
         'program_id',
@@ -57,12 +57,12 @@ class EautCrmStudent(models.Model):
     slide_channel_ids = fields.Many2many('slide.channel', string="Participated Courses")
 
     # Quan hệ với Support Team
-    # support_team_id = fields.Many2one('eaut.crm.eaut_support_team', string='Support Team')
+    # support_team_id = fields.Many2one('eaut.career.center.eaut_support_team', string='Support Team')
 
     # Quan hệ với Stage
-    # stage_id = fields.Many2one('eaut.crm.stage', string="Stage", tracking=True, index=True)
+    # stage_id = fields.Many2one('eaut.career.center.stage', string="Stage", tracking=True, index=True)
     stage_id = fields.Many2one(
-        'eaut.crm.stage',
+        'eaut.career.center.stage',
         string="Stage",
         tracking=True,
         index=True,
@@ -70,7 +70,7 @@ class EautCrmStudent(models.Model):
         domain="[('model_type', '=', 'student')]"
     )
     tag_ids = fields.Many2many(
-        'eaut.crm.tag',
+        'eaut.career.center.tag',
         'student_tag_rel',
         'student_id',
         'tag_id',
@@ -83,7 +83,7 @@ class EautCrmStudent(models.Model):
     # trong stage đó
     @api.model
     def _read_group_stage_ids(self, stages, domain, order=None):
-        return self.env['eaut.crm.stage'].search(
+        return self.env['eaut.career.center.stage'].search(
             [('model_type', '=', 'student')],
             order=order or 'sequence'
         )

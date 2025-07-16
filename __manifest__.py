@@ -10,8 +10,8 @@
         - Tích hợp với các module CRM và Event để quản lý sự kiện Ngày hội việc làm.
     """,
     'category': 'CRM',
-    'author': 'Your Name',
-    'website': 'https://yourcompany.com',
+    'author': 'EAUT',
+    'website': '',
     'depends': [
         'base',
         'crm',
@@ -22,19 +22,21 @@
     ],
     'data': [
         # 'security/security.xml',
-        'views/eaut_crm_student_views.xml',
-        'views/eaut_crm_employer_views.xml',
-        'views/eaut_crm_faculty_views.xml',
-        'views/eaut_crm_program_views.xml',
-        'views/eaut_crm_major_views.xml',
-        'views/eaut_crm_support_team_views.xml',
-        'views/eaut_crm_stage_views.xml',
-        'views/eaut_crm_tag_views.xml',
-        'views/eaut_crm_report_views.xml',
-        'views/eaut_crm_mou_contract_views.xml',
+        'views/eaut_career_center_student_views.xml',
+        'views/eaut_career_center_employer_views.xml',
+        'views/eaut_career_center_faculty_views.xml',
+        'views/eaut_career_center_program_views.xml',
+        'views/eaut_career_center_major_views.xml',
+        'views/eaut_career_center_support_team_views.xml',
+        'views/eaut_career_center_stage_views.xml',
+        'views/eaut_career_center_tag_views.xml',
+        'views/eaut_career_center_report_views.xml',
+        'views/eaut_career_center_mou_contract_views.xml',
 
-        'views/eaut_crm_menus.xml',
-        
+        'views/eaut_career_center_menus.xml',
+
+        'security/eaut_career_center_security.xml',
+
         'security/ir.model.access.csv',
     ],
     'assets': {

@@ -2,9 +2,9 @@
 <odoo>
 
     <!-- Form view -->
-    <record id="eaut_crm_program_view_form" model="ir.ui.view">
-        <field name="name">eaut.crm.program.view.form</field>
-        <field name="model">eaut.crm.program</field>
+    <record id="eaut_career_center_program_view_form" model="ir.ui.view">
+        <field name="name">eaut.career.center.program.view.form</field>
+        <field name="model">eaut.career.center.program</field>
         <field name="arch" type="xml">
             <form string="Program">
                 <sheet>
@@ -19,9 +19,9 @@
     </record>
 
     <!-- List view -->
-    <record id="eaut_crm_program_view_list" model="ir.ui.view">
-        <field name="name">eaut.crm.program.view.list</field>
-        <field name="model">eaut.crm.program</field>
+    <record id="eaut_career_center_program_view_list" model="ir.ui.view">
+        <field name="name">eaut.career.center.program.view.list</field>
+        <field name="model">eaut.career.center.program</field>
         <field name="arch" type="xml">
             <list string="Programs">
                 <field name="name" string="Khóa"/> 
@@ -31,9 +31,9 @@
     </record>
 
     <!-- Actions -->
-    <record id="action_eaut_crm_program" model="ir.actions.act_window">
+    <record id="action_eaut_career_center_program" model="ir.actions.act_window">
         <field name="name">Program</field>
-        <field name="res_model">eaut.crm.program</field>
+        <field name="res_model">eaut.career.center.program</field>
         <field name="view_mode">list,form,kanban</field>
     </record>
 

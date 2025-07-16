@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem 
+            id="menu_eaut_career_center_root" 
+            name="EAUT Career Center"
+            web_icon="eaut_career_center,static/description/icon.png"/>
+
+        <!-- Student -->
+        <menuitem id="menu_eaut_career_center_student_management"
+            name="Hướng nghiệp sinh viên" 
+            parent="menu_eaut_career_center_root"
+            sequence="10"/>
+        <menuitem id="menu_eaut_career_center_student" 
+            name="Sinh viên" 
+            parent="menu_eaut_career_center_student_management" 
+            action="action_eaut_career_center_student"/>
+
+        <!-- Employer - Nhà tuyển dụng -->
+        <menuitem id="menu_eaut_career_center_employer_management"
+            name="Hợp tác doanh nghiệp" 
+            parent="menu_eaut_career_center_root"
+            sequence="20"/>
+        <menuitem id="menu_eaut_career_center_employer" 
+            name="Nhà tuyển dụng" 
+            parent="menu_eaut_career_center_employer_management" 
+            action="action_eaut_career_center_employer"/>
+        <menuitem id="menu_eaut_career_center_mou_contract" 
+            name="Hợp đồng MOU"
+            parent="menu_eaut_career_center_employer_management" 
+            action="eaut_career_center_mou_contract_action"/>
+
+        <!-- Report -->
+        <menuitem id="menu_eaut_career_center_report"
+            name="Báo cáo" 
+            parent="menu_eaut_career_center_root"
+            action="action_eaut_career_center_report"
+            sequence="30"/>
+
+        <!-- Configuration -->
+        <menuitem id="menu_eaut_career_center_configuration"
+            name="Cấu hình" 
+            parent="menu_eaut_career_center_root"
+            sequence="40"/>
+        <!-- Support team -->
+        <menuitem id="menu_eaut_career_center_support_team_management"
+            name="Nhóm hỗ trợ" 
+            parent="menu_eaut_career_center_configuration" 
+            action="action_eaut_career_center_support_team"/>
+        <!-- Stage -->
+        <menuitem id="menu_eaut_career_center_stage_management"
+            name="Giai đoạn" 
+            parent="menu_eaut_career_center_configuration" 
+            action="action_eaut_career_center_stage"/>
+        <!-- Tag -->
+        <menuitem id="menu_eaut_career_center_tag_management"
+            name="Thẻ" 
+            parent="menu_eaut_career_center_configuration" 
+            action="action_eaut_career_center_tag"/>
+        <!--  -->
+        <menuitem id="menu_eaut_career_center_education_title"
+            name="Đào tạo" 
+            parent="menu_eaut_career_center_configuration"/>
+        <menuitem id="menu_eaut_career_center_faculty" 
+            name="Khoa" 
+            parent="menu_eaut_career_center_education_title" 
+            action="action_eaut_career_center_faculty"/>
+
+        <menuitem id="menu_eaut_career_center_major" 
+            name="Ngành" 
+            parent="menu_eaut_career_center_education_title" 
+            action="action_eaut_career_center_major"/>
+            
+        <menuitem id="menu_eaut_career_center_program" 
+            name="Khóa" 
+            parent="menu_eaut_career_center_education_title" 
+            action="action_eaut_career_center_program"/>
+    </data>
+</odoo>

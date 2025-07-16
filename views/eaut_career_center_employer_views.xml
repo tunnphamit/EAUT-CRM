@@ -2,9 +2,9 @@
 <odoo>
 
     <!-- Form view -->
-    <record id="eaut_crm_employer_view_form" model="ir.ui.view">
-        <field name="name">eaut.crm.employer.view.form</field>
-        <field name="model">eaut.crm.employer</field>
+    <record id="eaut_career_center_employer_view_form" model="ir.ui.view">
+        <field name="name">eaut.career.center.employer.view.form</field>
+        <field name="model">eaut.career.center.employer</field>
         <field name="arch" type="xml">
             <form string="Employers">
                 <header>
@@ -89,9 +89,9 @@
     </record>
 
     <!-- List view -->
-    <record id="eaut_crm_employer_view_list" model="ir.ui.view">
-        <field name="name">eaut.crm.employer.view.list</field>
-        <field name="model">eaut.crm.employer</field>
+    <record id="eaut_career_center_employer_view_list" model="ir.ui.view">
+        <field name="name">eaut.career.center.employer.view.list</field>
+        <field name="model">eaut.career.center.employer</field>
         <field name="arch" type="xml">
             <list string="Nhà tuyển dụng">
                 <field name="name" string="Tên nhà tuyển dụng"/>
@@ -103,9 +103,9 @@
     </record>
 
     <!-- Kanban view -->
-    <record id="eaut_crm_employer_view_kanban" model="ir.ui.view">
-        <field name="name">eaut.crm.employer.view.kanban</field>
-        <field name="model">eaut.crm.employer</field>
+    <record id="eaut_career_center_employer_view_kanban" model="ir.ui.view">
+        <field name="name">eaut.career.center.employer.view.kanban</field>
+        <field name="model">eaut.career.center.employer</field>
         <field name="arch" type="xml">
             <kanban string="Nhà tuyển dụng"
                     default_group_by="stage_id"
@@ -119,7 +119,7 @@
                                 <div style="flex-shrink: 0; margin-right: 10px;">
                                     <field name="photo" 
                                         widget="image" 
-                                        class="oe_avatar eaut_crm_kanban_photo" 
+                                        class="oe_avatar eaut_career_center_kanban_photo" 
                                         options="{'size': [64, 64]}" />
                                 </div>
                                 <div>
@@ -145,9 +145,9 @@
     </record>
 
     <!-- Actions -->
-    <record id="action_eaut_crm_employer" model="ir.actions.act_window">
+    <record id="action_eaut_career_center_employer" model="ir.actions.act_window">
         <field name="name">Nhà tuyển dụng</field>
-        <field name="res_model">eaut.crm.employer</field>
+        <field name="res_model">eaut.career.center.employer</field>
         <field name="view_mode">kanban,list,form</field>
     </record>
 

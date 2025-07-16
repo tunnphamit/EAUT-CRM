@@ -3,7 +3,7 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 class EautCrmEmployer(models.Model):
-    _name = 'eaut.crm.employer'
+    _name = 'eaut.career.center.employer'
     _description = 'Employer'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
@@ -33,7 +33,7 @@ class EautCrmEmployer(models.Model):
     # Relationship with Students
     # Danh sách sinh viên đã đăng ký với nhà tuyển dụng
     student_ids = fields.Many2many(
-        'eaut.crm.student',
+        'eaut.career.center.student',
         'employer_student_rel',
         'employer_id',
         'student_id',
@@ -42,7 +42,7 @@ class EautCrmEmployer(models.Model):
 
     # Quan hệ với Stage
     stage_id = fields.Many2one(
-        'eaut.crm.stage',
+        'eaut.career.center.stage',
         string="Stage",
         tracking=True,
         index=True,
@@ -52,7 +52,7 @@ class EautCrmEmployer(models.Model):
 
     # Relationship with Tags
     tag_ids = fields.Many2many(
-        'eaut.crm.tag',
+        'eaut.career.center.tag',
         'employer_tag_rel',
         'employer_id',
         'tag_id',
@@ -69,7 +69,7 @@ class EautCrmEmployer(models.Model):
     # trong stage đó
     @api.model
     def _read_group_stage_ids(self, stages, domain, order=None):
-        return self.env['eaut.crm.stage'].search(
+        return self.env['eaut.career.center.stage'].search(
             [('model_type', '=', 'employer')],
             order=order or 'sequence'
         )

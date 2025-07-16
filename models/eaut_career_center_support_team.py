@@ -2,7 +2,7 @@
 from odoo import fields, models, api
 
 class EautCrmSupportTeam(models.Model):
-    _name = 'eaut.crm.support.team'
+    _name = 'eaut.career.center.support.team'
     _description = 'Support Team'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 

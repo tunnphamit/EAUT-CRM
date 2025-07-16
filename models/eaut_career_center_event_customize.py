@@ -20,6 +20,6 @@ class EventRegistration(models.Model):
         for rec in self:
             # Nếu registration có email, tìm student tương ứng
             if rec.email and rec.event_id:
-                student = self.env['eaut.crm.student'].search([('email', '=', rec.email)], limit=1)
+                student = self.env['eaut.career.center.student'].search([('email', '=', rec.email)], limit=1)
                 if student and rec.event_id.id not in student.event_ids.ids:
                     student.event_ids = [(4, rec.event_id.id)]  # (4, id) là thêm phần tử vào Many2many không ghi đè
