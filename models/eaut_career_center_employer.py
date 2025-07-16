@@ -29,6 +29,11 @@ class EautCrmEmployer(models.Model):
     event_ids = fields.Many2many('event.event', string='Participated Events')
 
     # MOU information
+    mou_contract_ids = fields.One2many(
+        'eaut.career.center.mou.contract',
+        'employer_id',
+        string='Hợp đồng MOU'
+    )
 
     # Relationship with Students
     # Danh sách sinh viên đã đăng ký với nhà tuyển dụng
