@@ -1,7 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_eaut_career_center_student_user,EAUT Career Center Student (User),model_eaut_career_center_student,eaut_career_center.group_eaut_career_center_user,1,1,1,1
-access_eaut_career_center_employer_user,EAUT Career Center Employer (User),model_eaut_career_center_employer,eaut_career_center.group_eaut_career_center_user,1,1,1,1
-access_eaut_career_center_mou_contract_user,EAUT Career Center MOU Contract (User),model_eaut_career_center_mou_contract,eaut_career_center.group_eaut_career_center_user,1,1,1,1
+access_eaut_career_center_student_user,EAUT Career Center Student (User),model_eaut_career_center_student,eaut_career_center.group_eaut_career_center_user,1,1,1,0
+access_eaut_career_center_employer_user,EAUT Career Center Employer (User),model_eaut_career_center_employer,eaut_career_center.group_eaut_career_center_user,1,1,1,0
+access_eaut_career_center_mou_contract_user,EAUT Career Center MOU Contract (User),model_eaut_career_center_mou_contract,eaut_career_center.group_eaut_career_center_user,1,1,1,0
 access_eaut_career_center_stage_user,EAUT Career Center Stage (User),model_eaut_career_center_stage,eaut_career_center.group_eaut_career_center_user,1,0,0,0
 access_eaut_career_center_tag_user,EAUT Career Center Tag (User),model_eaut_career_center_tag,eaut_career_center.group_eaut_career_center_user,1,0,0,0
 
