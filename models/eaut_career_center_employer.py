@@ -34,6 +34,10 @@ class EautCrmEmployer(models.Model):
         'employer_id',
         string='Hợp đồng MOU'
     )
+    mou_contract_counter = fields.Integer(
+        string='MOU Contract Count',
+        compute='_compute_mou_contract_counter',
+    )
 
     # Relationship with Students
     # Danh sách sinh viên đã đăng ký với nhà tuyển dụng
@@ -63,6 +67,21 @@ class EautCrmEmployer(models.Model):
         'tag_id',
         string='Tags'
     )
+
+    # Smart buttons
+    def action_view_mou_contract(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'MOU Contracts',
+            'res_model': 'eaut.career.center.mou.contract',
+            'view_mode': 'tree,form',
+            'domain': [('employer_id', '=', self.id)],
+            'context': {'default_employer_id': self.id},
+        }
+    
+    def _compute_mou_contract_counter(self):
+        for employer in self:
+            employer.mou_contract_counter = len(employer.mou_contract_ids)
 
     # Unique constraint for email
     _sql_constraints = [
