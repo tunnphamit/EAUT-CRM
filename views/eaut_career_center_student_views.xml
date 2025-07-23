@@ -129,16 +129,25 @@
                                         options="{'size': [64, 64]}" />
                                 </div>
                                 <!-- Nội dung bên phải -->
-                                <div>
-                                    <strong><field name="name"/></strong>
-                                    <div>
+                                <div style="overflow: hidden;">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                                         <field name="email"/>
+                                    </div>
+                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        <field name="phone"/>
+                                    </div>
+                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                                         <field name="program_id" string="Khóa"/>
+                                    </div>
+                                    <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                                         <field name="major_id" string="Ngành"/>
                                     </div>
                                 </div>
                             </div>
-                            <div class="o_kanban_footer">
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px;">
                                 <field name="tag_ids" 
                                     widget="many2many_tags" 
                                     string="Thẻ" 
