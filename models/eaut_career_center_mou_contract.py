@@ -26,7 +26,11 @@ class EautCareerCenterMouContract(models.Model):
     
     note = fields.Html(string='Note')
     storage_location = fields.Char(string='Storage Location', help="Nơi lưu trữ hợp đồng")
-    signing_responsible = fields.Char(string='Signing Responsible', help="Đơn vị chịu trách nhiệm ký hợp đồng")
+    signing_responsible = fields.Many2one(
+        'res.users',
+        string='Signing Responsible',
+        help="Đơn vị phụ trách ký kết hợp đồng",
+    )
 
     # def action_view_file(self):
     #     return {
