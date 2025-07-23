@@ -58,9 +58,6 @@
                     <notebook>
                         <page string="Thông tin bổ sung">
                             <group>
-                                <group>
-                                    <field name="address" string="Địa chỉ"/>
-                                </group>
                                 <group string="Người liên hệ">
                                     <field name="contact_name" string="Tên liên hệ"/>
                                     <field name="contact_email" string="Email liên hệ"/>

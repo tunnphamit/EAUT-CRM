@@ -8,8 +8,9 @@ class EautCareerCenterEmployer(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Company Name', required=True, tracking=True)
-    email = fields.Char(string='Email', required=True, tracking=True)
-    phone = fields.Char(string='Phone', required=True, tracking=True)
+    email = fields.Char(string='Email', tracking=True)
+    phone = fields.Char(string='Phone', tracking=True)
+    
     website = fields.Char(string='Website')
     address = fields.Text(string='Address')
     photo = fields.Binary(string='Photo', attachment=True) # Ảnh đại diện

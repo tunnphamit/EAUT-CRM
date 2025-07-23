@@ -25,6 +25,8 @@ class EautCareerCenterMouContract(models.Model):
     attached_filename = fields.Char(string="Filename")
     
     note = fields.Html(string='Note')
+    storage_location = fields.Char(string='Storage Location', help="Nơi lưu trữ hợp đồng")
+    signing_responsible = fields.Char(string='Signing Responsible', help="Đơn vị chịu trách nhiệm ký hợp đồng")
 
     # def action_view_file(self):
     #     return {
