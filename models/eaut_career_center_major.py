@@ -1,7 +1,7 @@
 
 from odoo import fields, models
 
-class EautCrmMajor(models.Model):
+class EautCareerCenterMajor(models.Model):
     _name = 'eaut.career.center.major'
     _description = 'Major' # Ngành
     _inherit = ['mail.thread', 'mail.activity.mixin']

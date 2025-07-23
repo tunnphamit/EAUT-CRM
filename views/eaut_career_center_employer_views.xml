@@ -12,6 +12,17 @@
                 </header>
 
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_mou_contract" type="object"
+                            class="oe_stat_button" icon="fa-pencil-square-o"
+                            context="{'default_employer_id': id}">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Mou</span>
+                                <field name="mou_contract_counter" class="o_stat_value"/>
+                            </div>
+                        </button>
+                    </div>
+
                     <div class="flex-container">
                         <h1 class="oe_title">
                             <field name="name" placeholder="Họ và tên"/>
@@ -47,9 +58,6 @@
                     <notebook>
                         <page string="Thông tin bổ sung">
                             <group>
-                                <group>
-                                    <field name="address" string="Địa chỉ"/>
-                                </group>
                                 <group string="Người liên hệ">
                                     <field name="contact_name" string="Tên liên hệ"/>
                                     <field name="contact_email" string="Email liên hệ"/>

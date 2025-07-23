@@ -2,14 +2,15 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
-class EautCrmEmployer(models.Model):
+class EautCareerCenterEmployer(models.Model):
     _name = 'eaut.career.center.employer'
     _description = 'Employer'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Company Name', required=True, tracking=True)
-    email = fields.Char(string='Email', required=True, tracking=True)
-    phone = fields.Char(string='Phone', required=True, tracking=True)
+    email = fields.Char(string='Email', tracking=True)
+    phone = fields.Char(string='Phone', tracking=True)
+    
     website = fields.Char(string='Website')
     address = fields.Text(string='Address')
     photo = fields.Binary(string='Photo', attachment=True) # Ảnh đại diện
@@ -33,6 +34,10 @@ class EautCrmEmployer(models.Model):
         'eaut.career.center.mou.contract',
         'employer_id',
         string='Hợp đồng MOU'
+    )
+    mou_contract_counter = fields.Integer(
+        string='MOU Contract Count',
+        compute='_compute_mou_contract_counter',
     )
 
     # Relationship with Students
@@ -63,6 +68,21 @@ class EautCrmEmployer(models.Model):
         'tag_id',
         string='Tags'
     )
+
+    # Smart buttons
+    def action_view_mou_contract(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'MOU Contracts',
+            'res_model': 'eaut.career.center.mou.contract',
+            'view_mode': 'list,form',
+            'domain': [('employer_id', '=', self.id)],
+            'context': {'default_employer_id': self.id},
+        }
+    
+    def _compute_mou_contract_counter(self):
+        for employer in self:
+            employer.mou_contract_counter = len(employer.mou_contract_ids)
 
     # Unique constraint for email
     _sql_constraints = [

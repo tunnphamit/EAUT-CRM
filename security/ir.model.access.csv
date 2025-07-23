@@ -4,6 +4,7 @@ access_eaut_career_center_employer_user,EAUT Career Center Employer (User),model
 access_eaut_career_center_mou_contract_user,EAUT Career Center MOU Contract (User),model_eaut_career_center_mou_contract,eaut_career_center.group_eaut_career_center_user,1,1,1,0
 access_eaut_career_center_stage_user,EAUT Career Center Stage (User),model_eaut_career_center_stage,eaut_career_center.group_eaut_career_center_user,1,0,0,0
 access_eaut_career_center_tag_user,EAUT Career Center Tag (User),model_eaut_career_center_tag,eaut_career_center.group_eaut_career_center_user,1,0,0,0
+access_eaut_career_center_mou_scope_user,EAUT Career Center MOU Scope (User),model_eaut_career_center_mou_scope,eaut_career_center.group_eaut_career_center_user,1,0,0,0
 
 access_eaut_career_center_student_admin,EAUT Career Center Student (Admin),model_eaut_career_center_student,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
 access_eaut_career_center_employer_admin,EAUT Career Center Employer (Admin),model_eaut_career_center_employer,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
@@ -14,3 +15,4 @@ access_eaut_career_center_program_admin,EAUT Career Center Program (Admin),model
 access_eaut_career_center_support_team_admin,EAUT Career Center Support Team (Admin),model_eaut_career_center_support_team,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
 access_eaut_career_center_stage_admin,EAUT Career Center Stage (Admin),model_eaut_career_center_stage,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
 access_eaut_career_center_tag_admin,EAUT Career Center Tag (Admin),model_eaut_career_center_tag,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
+access_eaut_career_center_mou_scope_admin,EAUT Career Center MOU Scope (Admin),model_eaut_career_center_mou_scope,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
