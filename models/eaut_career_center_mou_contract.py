@@ -33,8 +33,8 @@ class EautCareerCenterMouContract(models.Model):
         help="Đơn vị phụ trách ký kết hợp đồng",
     )
 
-    @api.constrains('attached_filename')
+    @api.constrains('contract_file')
     def _check_only_pdf(self):
         for record in self:
-            if record.attached_filename and not record.attached_filename.lower().endswith('.pdf'):
+            if record.contract_filename and not record.contract_filename.lower().endswith('.pdf'):
                 raise ValidationError("Hợp đồng phải là định dạng PDF (.pdf)")
