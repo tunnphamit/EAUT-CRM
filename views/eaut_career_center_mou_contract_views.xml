@@ -18,8 +18,10 @@
                         <field name="employer_id" string="Nhà tuyển dụng" widget="many2one" options="{'no_create': True}"/>
                         <field name="start_date" string="Ngày bắt đầu"/>
                         <field name="end_date" string="Ngày kết thúc"/>
-                        <field name="scope_of_cooperation" string="Phạm vi hợp tác"/>
-                        <field name="cooperation_details" string="Chi tiết hợp tác"/>
+                        <field name="scope_ids" 
+                            widget="many2many_tags" 
+                            string="Phạm vi hợp tác MoU"
+                            options="{'color_field': 'color'}"/>
                     </group>
 
                     <group>
@@ -115,7 +117,6 @@
         <field name="arch" type="xml">
             <search>
                 <!-- Default filters -->
-
                 <field name="name"/>
                 <field name="employer_id"/>
                 <field name="start_date"/>

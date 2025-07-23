@@ -74,7 +74,7 @@ class EautCrmEmployer(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'MOU Contracts',
             'res_model': 'eaut.career.center.mou.contract',
-            'view_mode': 'tree,form',
+            'view_mode': 'list,form',
             'domain': [('employer_id', '=', self.id)],
             'context': {'default_employer_id': self.id},
         }
