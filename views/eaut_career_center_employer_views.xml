@@ -130,12 +130,18 @@
                                         class="oe_avatar eaut_career_center_kanban_photo" 
                                         options="{'size': [64, 64]}" />
                                 </div>
-                                <div>
+                                <div style="overflow: hidden;">
                                     <strong><field name="name"/></strong>
                                     <div>
-                                        <field name="email"/>
-                                        <div><field name="phone"/></div>
-                                        <field name="industry" string="Lĩnh vực hoạt động"/>
+                                        <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                            <field name="email"/>
+                                        </div>
+                                        <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                            <field name="phone"/>
+                                        </div>
+                                        <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                            <field name="industry"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
