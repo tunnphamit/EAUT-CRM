@@ -1,7 +1,7 @@
 
 from odoo import fields, models, api
 
-class EautCrmTag(models.Model):
+class EautCareerCenterTag(models.Model):
     _name = 'eaut.career.center.tag'
     _description = 'Tag'
     _inherit = ['mail.thread', 'mail.activity.mixin']

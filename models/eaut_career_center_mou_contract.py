@@ -1,7 +1,7 @@
 
 from odoo import models, fields, api
 
-class EautCrmMouContract(models.Model):
+class EautCareerCenterMouContract(models.Model):
     _name = 'eaut.career.center.mou.contract'
     _description = 'MOU Contract'
     _inherit = ['mail.thread', 'mail.activity.mixin']

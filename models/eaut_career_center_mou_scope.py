@@ -1,7 +1,7 @@
 
 from odoo import models, fields, api
 
-class EautCrmMouScope(models.Model):
+class EautCareerCenterMouScope(models.Model):
     _name = 'eaut.career.center.mou.scope'
     _description = 'MOU Scope of Cooperation'
     _inherit = ['mail.thread', 'mail.activity.mixin']
