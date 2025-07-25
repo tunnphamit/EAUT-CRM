@@ -18,7 +18,15 @@ class EautCareerCenterEmployer(models.Model):
     note = fields.Html(string="Note")
 
     # Industry
-    industry = fields.Char(string='Industry', tracking=True)
+    # industry = fields.Char(string='Industry', tracking=True)
+    industry_ids = fields.Many2many(
+        'eaut.career.center.employer.industry',
+        'employer_industry_rel',
+        'employer_id',
+        'employer_industry__id',
+        string='Industry',
+        tracking=True
+    )
     number_of_employees = fields.Integer(string='Number of Employees')
     
     # Contact Information

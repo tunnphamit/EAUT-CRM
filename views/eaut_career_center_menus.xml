@@ -68,7 +68,7 @@
             sequence="24"/>
         <!--  -->
         <menuitem id="menu_eaut_career_center_education_title"
-            name="Đào tạo" 
+            name="Đào tạo"
             parent="menu_eaut_career_center_configuration"
             sequence="30"/>
         <menuitem id="menu_eaut_career_center_faculty" 
@@ -76,17 +76,27 @@
             parent="menu_eaut_career_center_education_title" 
             action="action_eaut_career_center_faculty"
             sequence="31"/>
-
         <menuitem id="menu_eaut_career_center_major" 
             name="Ngành" 
             parent="menu_eaut_career_center_education_title" 
             action="action_eaut_career_center_major"
             sequence="32"/>
-            
         <menuitem id="menu_eaut_career_center_program" 
             name="Khóa" 
             parent="menu_eaut_career_center_education_title" 
             action="action_eaut_career_center_program"
             sequence="33"/>
+
+        <!--  -->
+        <menuitem id="menu_eaut_career_center_employer_title"
+            name="Nhà tuyển dụng" 
+            parent="menu_eaut_career_center_configuration"
+            sequence="40"/>
+        <menuitem id="menu_eaut_career_center_employer_industry"
+            name="Lĩnh vực hoạt động" 
+            parent="menu_eaut_career_center_employer_title"
+            action="action_eaut_career_center_employer_industry"
+            sequence="41"/>
+        
     </data>
 </odoo>

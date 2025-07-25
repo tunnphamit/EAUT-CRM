@@ -33,6 +33,7 @@
         'views/eaut_career_center_report_views.xml',
         'views/eaut_career_center_mou_contract_views.xml',
         'views/eaut_career_center_mou_scope_views.xml',
+        'views/eaut_career_center_employer_industry_views.xml',
 
         'views/eaut_career_center_menus.xml',
 
