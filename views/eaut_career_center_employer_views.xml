@@ -145,7 +145,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="o_kanban_footer">
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px;">
                                 <field name="tag_ids" 
                                     widget="many2many_tags" 
                                     string="Thẻ" 
