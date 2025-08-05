@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <form string="Employers">
                 <header>
-                    <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                    <field name="stage_id" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}"/>
                 </header>
 
                 <sheet>
@@ -39,7 +39,9 @@
                             <group>
                                 <field name="email" string="Địa chỉ email"/>
                                 <field name="phone" string="SĐT Công ty" widget="phone"/>
-                                <field name="industry" string="Lĩnh vực hoạt động"/>
+                                <field name="industry_ids" 
+                                    widget="many2many_tags" 
+                                    string="Lĩnh vực hoạt động"/>
                                 <field name="number_of_employees" string="Số lượng nhân viên"/>
                                 <field name="tag_ids" 
                                     widget="many2many_tags" 
@@ -105,7 +107,9 @@
                 <field name="name" string="Tên nhà tuyển dụng"/>
                 <field name="phone" string="Số điện thoại"/>
                 <field name="email" string="Email"/>
-                <field name="industry" string="Lĩnh vực hoạt động"/>
+                <field name="industry_ids" 
+                    widget="many2many_tags" 
+                    string="Lĩnh vực hoạt động"/>
             </list>
         </field>
     </record>
@@ -140,7 +144,9 @@
                                             <field name="phone"/>
                                         </div>
                                         <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                            <field name="industry"/>
+                                            <field name="industry_ids" 
+                                                widget="many2many_tags" 
+                                                string="Lĩnh vực hoạt động"/>
                                         </div>
                                     </div>
                                 </div>
