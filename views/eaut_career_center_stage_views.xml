@@ -12,6 +12,7 @@
                         <field name="name" string="Tên giai đoạn"/>
                         <field name="model_type" string="Thuộc về"/>
                         <field name="description" string="Mô tả"/>
+                        <field name="fold" string="Thu gọn ở thanh trạng thái?"/>
                     </group>
                 </sheet>
             </form>
