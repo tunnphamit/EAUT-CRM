@@ -30,7 +30,12 @@ class EautCareerCenterMouContract(models.Model):
     signing_responsible = fields.Many2one(
         'res.users',
         string='Signing Responsible',
-        help="Đơn vị phụ trách ký kết hợp đồng",
+    )
+
+    # Các khoa cùng hợp tác ký kết
+    co_signers = fields.Many2many(
+        'res.users',
+        string='Co-signers',
     )
 
     @api.constrains('contract_file')
