@@ -42,7 +42,7 @@
                                 <field name="industry_ids" 
                                     widget="many2many_tags" 
                                     string="Lĩnh vực hoạt động"/>
-                                <field name="number_of_employees" string="Số lượng nhân viên"/>
+                                <field name="employee_size" string="Quy mô nhân sự"/>
                                 <field name="tag_ids" 
                                     widget="many2many_tags" 
                                     string="Thẻ"

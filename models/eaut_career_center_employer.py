@@ -27,12 +27,14 @@ class EautCareerCenterEmployer(models.Model):
         string='Industry',
         tracking=True
     )
-    number_of_employees = fields.Integer(string='Number of Employees')
-    
+
+    # Quy mô nhân viên của doanh nghiệp
+    employee_size = fields.Char(string='Employee Size')
+
     # Contact Information
-    contact_name = fields.Char(string='Contact Name')
-    contact_email = fields.Char(string='Contact Email')
-    contact_phone = fields.Char(string='Contact Phone')
+    contact_name = fields.Char(string='Contact Name', tracking=True)
+    contact_email = fields.Char(string='Contact Email', tracking=True)
+    contact_phone = fields.Char(string='Contact Phone', tracking=True)
 
     # Event
     event_ids = fields.Many2many('event.event', string='Participated Events')
