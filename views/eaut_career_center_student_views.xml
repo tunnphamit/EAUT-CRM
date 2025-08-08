@@ -58,7 +58,6 @@
                         <page string="Thông tin bổ sung">
                             <group>
                                 <group>
-                                    <field name="have_cv" string="Đã có CV" widget="boolean"/>
                                     <field name="cv_link" string="CV Link" widget="url"/>
                                 </group>
                                 <group>
