@@ -54,6 +54,12 @@
                                 <field name="tax_code" string="Mã số thuế"/>
                             </group>
                         </group>
+
+                        <group string="Thông tin hợp tác">
+                            <field name="responsible_faculty" 
+                                string="Khoa/Viện đang phụ trách"
+                                widget="many2many_tags"/>
+                        </group>
                     </div>
 
                     <!-- Notebook -->

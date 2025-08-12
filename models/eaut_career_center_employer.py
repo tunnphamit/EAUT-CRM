@@ -17,6 +17,14 @@ class EautCareerCenterEmployer(models.Model):
     tax_code = fields.Char(string='Tax Code', tracking=True)
     note = fields.Html(string="Note")
 
+    # Thông tin hợp tác
+    # Khoa phụ trách
+    responsible_faculty = fields.Many2many(
+        'res.users',
+        string='Responsible Faculty',
+        tracking=True
+    )
+
     # Industry
     # industry = fields.Char(string='Industry', tracking=True)
     industry_ids = fields.Many2many(
