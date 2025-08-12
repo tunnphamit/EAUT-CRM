@@ -176,21 +176,16 @@
         <field name="arch" type="xml">
             <search string="Employers">
                 <!-- Trường tìm kiếm cơ bản -->
-                <field name="name"/>
-                <field name="email"/>
-                <field name="phone"/>
-                <field name="industry_ids"/>
+                <field name="name" string="Tên"/>
+                <field name="email" string="Email"/>
+                <field name="phone" string="SĐT"/>
+                <field name="industry_ids" string="Lĩnh vực hoạt động"/>
 
                 <!-- Filter My employer -->
                 <filter name="my_employer"
                         string="My employer"
                         domain="['|', ('create_uid', '=', uid), ('responsible_faculty', 'in', [uid])]"/>
 
-                <!-- Nhóm nhanh (tuỳ chọn) -->
-                <!-- <separator/>
-                <filter string="Stage" context="{'group_by': 'stage_id'}"/>
-                <filter string="Industry" context="{'group_by': 'industry_ids'}"/>
-                <filter string="Tags" context="{'group_by': 'tag_ids'}"/> -->
             </search>
         </field>
     </record>

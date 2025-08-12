@@ -159,6 +159,19 @@
         </field>
     </record>
 
+    <record id="eaut_career_center_student_view_search" model="ir.ui.view">
+        <field name="name">eaut.career.center.student.view.search</field>
+        <field name="model">eaut.career.center.student</field>
+        <field name="arch" type="xml">
+            <search string="Students">
+                <field name="code" string="Mã sinh viên"/>
+                <field name="name" string="Tên"/>
+                <field name="email" string="Email"/>
+                <field name="phone" string="SĐT"/>
+            </search>
+        </field>
+    </record>
+
     <!-- Actions -->
     <record id="action_eaut_career_center_student" model="ir.actions.act_window">
         <field name="name">Student</field>
