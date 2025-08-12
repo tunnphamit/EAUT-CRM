@@ -17,6 +17,14 @@ class EautCareerCenterEmployer(models.Model):
     tax_code = fields.Char(string='Tax Code', tracking=True)
     note = fields.Html(string="Note")
 
+    # Thông tin hợp tác
+    # Khoa phụ trách
+    responsible_faculty = fields.Many2many(
+        'res.users',
+        string='Responsible Faculty',
+        tracking=True
+    )
+
     # Industry
     # industry = fields.Char(string='Industry', tracking=True)
     industry_ids = fields.Many2many(
@@ -27,12 +35,14 @@ class EautCareerCenterEmployer(models.Model):
         string='Industry',
         tracking=True
     )
-    number_of_employees = fields.Integer(string='Number of Employees')
-    
+
+    # Quy mô nhân viên của doanh nghiệp
+    employee_size = fields.Char(string='Employee Size')
+
     # Contact Information
-    contact_name = fields.Char(string='Contact Name')
-    contact_email = fields.Char(string='Contact Email')
-    contact_phone = fields.Char(string='Contact Phone')
+    contact_name = fields.Char(string='Contact Name', tracking=True)
+    contact_email = fields.Char(string='Contact Email', tracking=True)
+    contact_phone = fields.Char(string='Contact Phone', tracking=True)
 
     # Event
     event_ids = fields.Many2many('event.event', string='Participated Events')

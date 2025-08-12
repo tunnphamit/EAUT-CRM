@@ -21,7 +21,7 @@ class EautCareerCenterStudent(models.Model):
     note = fields.Html(string="Note")
     address = fields.Text(string='Address')
 
-    have_cv = fields.Boolean(string='Have CV', default=False)
+    # have_cv = fields.Boolean(string='Have CV', default=False)
     cv_link = fields.Char(string='CV Link')
 
     # Quan hệ Khoa, Khóa, Ngành
