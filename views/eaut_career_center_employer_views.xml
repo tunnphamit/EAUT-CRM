@@ -170,11 +170,37 @@
         </field>
     </record>
 
+    <record id="eaut_career_center_employer_view_search" model="ir.ui.view">
+        <field name="name">eaut.career.center.employer.view.search</field>
+        <field name="model">eaut.career.center.employer</field>
+        <field name="arch" type="xml">
+            <search string="Employers">
+                <!-- Trường tìm kiếm cơ bản -->
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="industry_ids"/>
+
+                <!-- Filter My employer -->
+                <filter name="my_employer"
+                        string="My employer"
+                        domain="['|', ('create_uid', '=', uid), ('responsible_faculty', 'in', [uid])]"/>
+
+                <!-- Nhóm nhanh (tuỳ chọn) -->
+                <!-- <separator/>
+                <filter string="Stage" context="{'group_by': 'stage_id'}"/>
+                <filter string="Industry" context="{'group_by': 'industry_ids'}"/>
+                <filter string="Tags" context="{'group_by': 'tag_ids'}"/> -->
+            </search>
+        </field>
+    </record>
+
     <!-- Actions -->
     <record id="action_eaut_career_center_employer" model="ir.actions.act_window">
         <field name="name">Nhà tuyển dụng</field>
         <field name="res_model">eaut.career.center.employer</field>
         <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'search_default_my_employer': 1}</field>
     </record>
 
 </odoo>
