@@ -7,6 +7,9 @@ class EautCareerCenterEmployer(models.Model):
     _description = 'Employer'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
+    # Trường để tạo nút lưu trữ bản ghi
+    active = fields.Boolean(default=True)
+
     name = fields.Char(string='Company Name', required=True, tracking=True)
     email = fields.Char(string='Email', tracking=True)
     phone = fields.Char(string='Phone', tracking=True)

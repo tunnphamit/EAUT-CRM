@@ -168,7 +168,33 @@
                 <field name="name" string="Tên"/>
                 <field name="email" string="Email"/>
                 <field name="phone" string="SĐT"/>
+
+                <filter name="archived" string="Đã lưu trữ" domain="[('active','=',False)]"/>
             </search>
+        </field>
+    </record>
+
+    <!-- Nút lưu trữ, bỏ lưu trữ -->
+    <record id="eaut_student_form_archive_buttons" model="ir.ui.view">
+        <field name="name">eaut.student.form.archive.buttons</field>
+        <field name="model">eaut.career.center.student</field>
+        <!-- thay bằng ID form gốc của bạn -->
+        <field name="inherit_id" ref="eaut_career_center.eaut_career_center_student_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+                <!-- Hiện khi active=True -->
+                <button name="toggle_active"
+                        type="object"
+                        string="Lưu trữ"
+                        class="btn-secondary"
+                        invisible="not active"/>
+                <!-- Hiện khi active=False -->
+                <button name="toggle_active"
+                        type="object"
+                        string="Bỏ lưu trữ"
+                        class="btn-secondary"
+                        invisible="active"/>
+            </xpath>
         </field>
     </record>
 
@@ -177,6 +203,5 @@
         <field name="name">Student</field>
         <field name="res_model">eaut.career.center.student</field>
         <field name="view_mode">kanban,list,form</field>
-        <!-- <field name="domain">[('stage_id.model_type', '=', 'student')]</field> -->
     </record>
 </odoo>
