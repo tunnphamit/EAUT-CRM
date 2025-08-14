@@ -8,6 +8,9 @@ class EautCareerCenterStudent(models.Model):
     _description = 'Student'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
+    # Trường để tạo nút lưu trữ bản ghi
+    active = fields.Boolean(default=True)
+
     # tracking=True -> Khi trường thay đổi, Odoo sẽ ghi lại lịch sử thay đổi vào Chatter
 
     # Storage feature
