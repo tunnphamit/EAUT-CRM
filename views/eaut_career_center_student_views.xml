@@ -12,6 +12,19 @@
                 </header>
 
                 <sheet>
+                    <!-- SMART BUTTONS -->
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object"
+                                name="action_open_related_tickets"
+                                class="oe_stat_button"
+                                icon="fa-ticket"
+                                invisible="not email">
+                            <span class="o_stat_value">
+                                <field name="ticket_count" widget="statinfo"/>
+                            </span>
+                        </button>
+                    </div>
+
                     <div class="flex-container" style="display: flex; align-items: center;">
                         <h1 class="oe_title" style="flex: 1; white-space: normal; word-break: break-word;">
                             <field name="name" placeholder="Họ và tên"/>

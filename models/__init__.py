@@ -11,3 +11,4 @@ from . import eaut_career_center_mou_contract
 from . import eaut_career_center_event_customize
 from . import eaut_career_center_mou_scope
 from . import eaut_career_center_employer_industry
+from . import eaut_career_center_ticket_customize

@@ -2,6 +2,7 @@
 from odoo import fields, models, api, _
 import re
 from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError
 
 class EautCareerCenterStudent(models.Model):
     _name = 'eaut.career.center.student'
@@ -73,6 +74,42 @@ class EautCareerCenterStudent(models.Model):
         string='Tags',
         tracking=True
     )
+
+    ticket_count = fields.Integer(string="Tickets", compute="_compute_ticket_count")
+
+    def _compute_ticket_count(self):
+        Helpdesk = self.env['helpdesk.ticket'].sudo()
+        for rec in self:
+            if not rec.email:
+                rec.ticket_count = 0
+                continue
+            rec.ticket_count = Helpdesk.search_count([
+                ('partner_id.email', '=', rec.email)
+            ])
+
+    def action_open_related_tickets(self):
+        self.ensure_one()
+
+        domain = [('partner_id.email', '=', self.email)]
+        ticket_count = self.env['helpdesk.ticket'].sudo().search_count(domain)
+
+        if ticket_count == 0:
+            # Nếu không muốn thông báo thì có thể return True hoặc None
+            raise UserError(_("Không tìm thấy Ticket nào cho email %s") % self.email)
+
+        partner = self.env['res.partner'].sudo().search([('email', '=', self.email)], limit=1)
+
+        return {
+            'name': _("Tickets of %s") % (self.name or self.email),
+            'type': 'ir.actions.act_window',
+            'res_model': 'helpdesk.ticket',
+            'view_mode': 'list,form,kanban',
+            'domain': domain,
+            'context': {
+                'default_partner_id': partner.id if partner else False,
+            },
+            'target': 'current',
+        }
 
     # Override the _read_group_stage_ids method to filter stages by model_type
     # Hiện thị các stage thuộc model_type là 'student' kể cả khi không có student nào
