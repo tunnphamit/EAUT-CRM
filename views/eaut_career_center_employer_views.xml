@@ -213,11 +213,29 @@
         </field>
     </record>
 
+    <record id="view_employer_graph" model="ir.ui.view">
+        <field name="name">eaut.career.center.employer.graph</field>
+        <field name="model">eaut.career.center.employer</field>
+        <field name="arch" type="xml">
+            <graph string="Employers by Month" type="bar">
+                <field name="create_date" type="row" interval="month"/>
+                <field name="id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_employer_graph" model="ir.actions.act_window">
+        <field name="name">Employers Growth</field>
+        <field name="res_model">eaut.career.center.employer</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_id" ref="view_employer_graph"/>
+    </record>
+
     <!-- Actions -->
     <record id="action_eaut_career_center_employer" model="ir.actions.act_window">
         <field name="name">Nhà tuyển dụng</field>
         <field name="res_model">eaut.career.center.employer</field>
-        <field name="view_mode">kanban,list,form</field>
+        <field name="view_mode">kanban,list,form,graph,pivot</field>
         <field name="context">{'search_default_my_employer': 1}</field>
     </record>
 

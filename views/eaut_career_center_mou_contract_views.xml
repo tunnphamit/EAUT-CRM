@@ -139,12 +139,29 @@
         </field>
     </record>
 
+    <record id="view_mou_contract_graph" model="ir.ui.view">
+        <field name="name">eaut.career.center.mou.contract.graph</field>
+        <field name="model">eaut.career.center.mou.contract</field>
+        <field name="arch" type="xml">
+            <graph string="MOU Contracts by Month" type="bar">
+                <field name="create_date" type="row" interval="month"/>
+                <field name="id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_mou_contract_graph" model="ir.actions.act_window">
+        <field name="name">MOU Contracts Growth</field>
+        <field name="res_model">eaut.career.center.mou.contract</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_id" ref="view_mou_contract_graph"/>
+    </record>
 
     <!-- Actions -->
     <record id="eaut_career_center_mou_contract_action" model="ir.actions.act_window">
         <field name="name">MOU Contracts</field>
         <field name="res_model">eaut.career.center.mou.contract</field>
-        <field name="view_mode">list,kanban,form</field>
+        <field name="view_mode">list,kanban,form,graph,pivot</field>
         <!-- Use list view by default -->
         <field name="view_id" ref="eaut_career_center_mou_contract_view_list"/>
     </record>
