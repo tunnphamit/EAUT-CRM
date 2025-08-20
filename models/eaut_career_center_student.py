@@ -2,6 +2,7 @@
 from odoo import fields, models, api, _
 import re
 from odoo.exceptions import ValidationError
+from collections import Counter, defaultdict
 
 class EautCareerCenterStudent(models.Model):
     _name = 'eaut.career.center.student'
@@ -98,3 +99,29 @@ class EautCareerCenterStudent(models.Model):
         for rec in self:
             if rec.email and not re.match(email_pattern, rec.email):
                 raise ValidationError(_("Email '%s' is not a valid email address!") % rec.email)
+    
+    @api.model_create_multi
+    def create(self, vals_list):
+        # Không phải import → tạo bình thường
+        if not self.env.context.get('import_file'):
+            return super().create(vals_list)
+
+        # Đang import → trùng code/email thì KHÔNG tạo mới,
+        # nhưng vẫn trả về record tương ứng để tránh KeyError 'record'
+        created = self.browse()
+        Student = self.sudo()
+        for vals in vals_list:
+            code = vals.get('code')
+            email = vals.get('email')
+
+            existing = self.browse()
+            if code:
+                existing = Student.search([('code', '=', code)], limit=1)
+            if not existing and email:
+                existing = Student.search([('email', '=', email)], limit=1)
+
+            if existing:
+                created |= existing          # skip tạo mới
+            else:
+                created |= super(EautCareerCenterStudent, self).create([vals])
+        return created
