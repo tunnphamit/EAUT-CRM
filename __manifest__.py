@@ -18,7 +18,8 @@
         'event',
         'mail',
         'calendar',
-        'website_slides'
+        'website_slides',
+        'board',
     ],
     'data': [
         # 'security/security.xml',
@@ -34,6 +35,7 @@
         'views/eaut_career_center_mou_contract_views.xml',
         'views/eaut_career_center_mou_scope_views.xml',
         'views/eaut_career_center_employer_industry_views.xml',
+        # "views/dashboard.xml",
 
         'views/eaut_career_center_menus.xml',
 
