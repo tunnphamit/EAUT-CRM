@@ -51,6 +51,24 @@
         </field>
     </record>
 
+    <record id="view_registration_graph" model="ir.ui.view">
+        <field name="name">eaut.career.center.student.registration.graph</field>
+        <field name="model">eaut.career.center.student.registration</field>
+        <field name="arch" type="xml">
+            <graph string="Phiếu đăng ký tư vấn theo tháng" type="bar">
+                <field name="create_date" type="row" interval="month"/>
+                <field name="id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_registration_graph" model="ir.actions.act_window">
+        <field name="name">Phiếu đăng ký tư vấn</field>
+        <field name="res_model">eaut.career.center.student.registration</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_id" ref="view_registration_graph"/>
+    </record>
+
     <!-- Actions -->
     <record id="action_eaut_career_center_student_registration" model="ir.actions.act_window">
         <field name="name">Phiếu đăng ký tư vấn</field>
