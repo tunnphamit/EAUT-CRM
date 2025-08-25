@@ -75,6 +75,30 @@ class EautCareerCenterStudent(models.Model):
         tracking=True
     )
 
+    registration_ids = fields.One2many(
+        'eaut.career.center.student.registration',
+        'student_id',
+        string='Registrations',
+    )
+    registration_counter = fields.Integer(
+        compute='_compute_registration_counter',
+    )
+
+    # Smart buttons
+    def action_view_registration(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Phiếu đăng ký tư vấn',
+            'res_model': 'eaut.career.center.student.registration',
+            'view_mode': 'list,form',
+            'domain': [('student_id', '=', self.id)],
+            'context': {'default_student_id': self.id},
+        }
+
+    def _compute_registration_counter(self):
+        for student in self:
+            student.registration_counter = len(student.registration_ids)
+
     # Override the _read_group_stage_ids method to filter stages by model_type
     # Hiện thị các stage thuộc model_type là 'student' kể cả khi không có student nào
     # trong stage đó

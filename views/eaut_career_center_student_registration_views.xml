@@ -4,7 +4,7 @@
         <field name="name">eaut.career.center.student.registration.form</field>
         <field name="model">eaut.career.center.student.registration</field>
         <field name="arch" type="xml">
-            <form string="Đăng ký hỗ trợ">
+            <form string="Phiếu đăng ký tư vấn">
                 <header>
                     <field name="stage_id" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}"/>
                 </header>
@@ -42,7 +42,7 @@
         <field name="name">eaut.career.center.student.registration.list</field>
         <field name="model">eaut.career.center.student.registration</field>
         <field name="arch" type="xml">
-            <list string="Đăng ký hỗ trợ">
+            <list string="Phiếu đăng ký tư vấn">
                 <field name="name" string="Tiêu đề"/>
                 <field name="student_id" string="Sinh viên"/>
                 <field name="deadline" string="Hạn chót"/>
@@ -53,7 +53,7 @@
 
     <!-- Actions -->
     <record id="action_eaut_career_center_student_registration" model="ir.actions.act_window">
-        <field name="name">Đăng ký hỗ trợ</field>
+        <field name="name">Phiếu đăng ký tư vấn</field>
         <field name="res_model">eaut.career.center.student.registration</field>
         <field name="view_mode">list,form,kanban,graph,pivot</field>
     </record>

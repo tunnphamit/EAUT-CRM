@@ -12,6 +12,17 @@
                 </header>
 
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_registration" type="object"
+                            class="oe_stat_button" icon="fa-file-text-o"
+                            context="{'default_student_id': id}">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Phiếu đăng ký tư vấn</span>
+                                <field name="registration_counter" class="o_stat_value"/>
+                            </div>
+                        </button>
+                    </div>
+
                     <div class="flex-container" style="display: flex; align-items: center;">
                         <h1 class="oe_title" style="flex: 1; white-space: normal; word-break: break-word;">
                             <field name="name" placeholder="Họ và tên"/>
