@@ -15,6 +15,10 @@
             name="Sinh viên" 
             parent="menu_eaut_career_center_student_management" 
             action="action_eaut_career_center_student"/>
+        <menuitem id="menu_eaut_career_center_student_registration" 
+            name="Đăng ký hỗ trợ" 
+            parent="menu_eaut_career_center_student_management" 
+            action="action_eaut_career_center_student_registration"/>
 
         <!-- Employer - Nhà tuyển dụng -->
         <menuitem id="menu_eaut_career_center_employer_management"

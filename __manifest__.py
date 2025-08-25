@@ -22,7 +22,6 @@
         'board',
     ],
     'data': [
-        # 'security/security.xml',
         'views/eaut_career_center_student_views.xml',
         'views/eaut_career_center_employer_views.xml',
         'views/eaut_career_center_faculty_views.xml',
@@ -35,7 +34,7 @@
         'views/eaut_career_center_mou_contract_views.xml',
         'views/eaut_career_center_mou_scope_views.xml',
         'views/eaut_career_center_employer_industry_views.xml',
-        # "views/dashboard.xml",
+        'views/eaut_career_center_student_registration_views.xml',
 
         'views/eaut_career_center_menus.xml',
 

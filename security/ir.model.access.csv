@@ -17,3 +17,4 @@ access_eaut_career_center_stage_admin,EAUT Career Center Stage (Admin),model_eau
 access_eaut_career_center_tag_admin,EAUT Career Center Tag (Admin),model_eaut_career_center_tag,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
 access_eaut_career_center_mou_scope_admin,EAUT Career Center MOU Scope (Admin),model_eaut_career_center_mou_scope,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
 access_eaut_career_center_employer_industry_admin,EAUT Career Center Employer Industry (Admin),model_eaut_career_center_employer_industry,eaut_career_center.group_eaut_career_center_admin,1,1,1,1
+access_eaut_career_center_student_registration_admin,EAUT Career Center Student Registration (Admin),model_eaut_career_center_student_registration,eaut_career_center.group_eaut_career_center_admin,1,1,1,1

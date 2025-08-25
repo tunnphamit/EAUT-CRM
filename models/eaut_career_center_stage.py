@@ -21,6 +21,7 @@ class EautCareerCenterStage(models.Model):
         [
             ('student', 'Student'),
             ('employer', 'Employer'),
+            ('student_registration', 'Student Registration'),
         ],
         string='Belong to',
         required=True,
