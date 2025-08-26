@@ -16,7 +16,7 @@
             parent="menu_eaut_career_center_student_management" 
             action="action_eaut_career_center_student"/>
         <menuitem id="menu_eaut_career_center_student_registration" 
-            name="Đăng ký hỗ trợ" 
+            name="Phiếu đăng ký tư vấn" 
             parent="menu_eaut_career_center_student_management" 
             action="action_eaut_career_center_student_registration"/>
 
